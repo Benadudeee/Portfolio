@@ -28,11 +28,11 @@ const projectLinks = [
 
 		width: 100%;
 		height: 100dvh;
-
+		
 		background-color: var(--primary-clr-light);
 		z-index: 1000;
 	}
-
+	
 	.hero{
 		display:flex;
 		flex-direction: column;
@@ -41,29 +41,29 @@ const projectLinks = [
 		/* justify-content: center; */
 		
 	}
-
+	
 	.hero-info{
 		display:flex;
 		flex-direction: column;
 		gap: 1em;
-
+		
 		align-items: flex-start;
 		/* max-width: 400px; */
 	}
-
+	
 	.hero-cta{
 		margin: 1em 0;
-
+		
 	}
-
+	
 	.hero-widgets{
 		display:grid;
 		grid-template-columns: 1fr 1fr;
 		width: 100%;
-
+		
 		gap: 0.5em;
 	}
-
+	
 	.hero-widgets > div{
 		width:100%;
 		/* border: solid var(--primary-clr-light) 2px;
@@ -73,47 +73,47 @@ const projectLinks = [
 	
 	/* .widget--container{
 		padding: 1em;
-	} */
-
-	.subheader{
-		opacity: 0.83;
-	}
-	
-	.subtext{
-		font-size: .825rem;
-		opacity: 0.33;
+		} */
 		
-		margin: .25em 0;
-	}
-	
-	.hero--panel{
-		width: 100%;
-		min-height: fit-content;
-		background-color: var(--accent-clr);
-
-	}
-
-	@media screen and (min-width: 768px){
-		.hero--container{
-			width:100%;
-			min-height: 100dvh;
-
-			display:flex;
-			flex-direction: row;
+		.subheader{
+			opacity: 0.83;
 		}
-
-		.hero--info{
-			width: 50%;
-			display: flex;
-			align-items: center;
-			justify-content:center;
+		
+		.subtext{
+			font-size: .825rem;
+			opacity: 0.33;
+			
+			margin: .25em 0;
 		}
-		.info--wrapper{
-			max-width: 400px;
-			display: flex;
-			flex-direction: column;
-			gap: 1em;
+		
+		.hero--panel{
+			width: 100%;
+			min-height: fit-content;
+			background-color: var(--accent-clr);
+			
 		}
+		
+		@media screen and (min-width: 768px){
+			.hero--container{
+				width:100%;
+				min-height: 100dvh;
+				
+				display:flex;
+				flex-direction: row;
+			}
+			
+			.hero--info{
+				width: 50%;
+				display: flex;
+				align-items: center;
+				justify-content:center;
+			}
+			.info--wrapper{
+				max-width: 400px;
+				display: flex;
+				flex-direction: column;
+				gap: 1em;
+			}
 		.hero--panel{
 			width: 50%;
 		}
@@ -122,22 +122,22 @@ const projectLinks = [
 			display:grid;
 			grid-template-columns: 1fr 1fr;
 			width: 100%;
-
+			
 			gap: 0.5em;
-		}
-
-		.hero-widgets > div{
-			width:100%;
-			border: solid var(--primary-clr-light) 2px;
-			background-color: #202020;
-			border-radius: 20px;
-		} */
-		.widget-three{
-			grid-column: 1 / -1;
-		}
+			}
+			
+			.hero-widgets > div{
+				width:100%;
+				border: solid var(--primary-clr-light) 2px;
+				background-color: #202020;
+				border-radius: 20px;
+				} */
+				.widget-three{
+					grid-column: 1 / -1;
+				}
 	}
 
-</style>
+	</style>
 
 <Layout>
 	<!-- <section class="animation-open--container">
@@ -146,14 +146,14 @@ const projectLinks = [
 		<div class="display-screen"></div>
 		<div class="display-screen"></div>
 		<div class="display-screen"></div>
-	</section> -->
-	<section class="hero">
-		<!-- <p class="smol--text">If your reading this, have a NICE DAY! :)</p> -->
-
-		<div class="hero--container">
-			<div class="hero--info">
-				<div class="info--wrapper">
-					<h1 class="title">Building Cool Stuff With Tech</h1>
+		</section> -->
+		<section class="hero">
+			<!-- <p class="smol--text">If your reading this, have a NICE DAY! :)</p> -->
+			
+			<div class="hero--container">
+				<div class="hero--info">
+					<div class="info--wrapper">
+						<h1 class="title">Building Cool Stuff With Tech</h1>
 					<p>I'm a college web developer with an interest in creativity and building techical apps. You can see more of my stuff below</p>
 		
 					<div class="hero-cta">
@@ -178,15 +178,15 @@ const projectLinks = [
 						</div>
 					</div>
 				</div>
-
+				
 			</div>
-			<div class="hero--panel">
-
-			</div>
+			<canvas class="hero--panel">
+				
+			</canvas>
 		</div>
 	</section>
 	<section class="projects">
-
+		
 	</section>
 	<section>
 
@@ -195,10 +195,12 @@ const projectLinks = [
 
 <script>
 	import {animate} from 'animejs';
+	import "../scripts/canvas-game.js";
+
 
 	const displaySelectors = document.querySelectorAll(".display-screen");
 	console.log(displaySelectors);
-
+	
 	const colors = [
 		"red",
 		"blue",
