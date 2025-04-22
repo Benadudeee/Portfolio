@@ -1,0 +1,230 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BlogLayout from '../layouts/BlogLayout.astro';
+import LinkList from '../components/LinkList.astro';
+import "../styles/global.css";
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+
+const socialLinks = [ 
+	{text: "linkedin", url:"https://www.linkedin.com/in/benedict-antwi-607270278/"},
+	{text: "github", url: "https://github.com/Benadudeee"},
+	{text: "handshake", url:"https://app.joinhandshake.com/profiles/mu3av9"}
+];
+
+const projectLinks = [
+	{text: "Particle Simulation", url: "https://dhaven.netlify.app/"},
+	{text: "Simple Astro Blog", url: "https://astro-blogging-tutoriall.netlify.app/"},
+	{text: "Vacation Page", url: "https://vacation-page.netlify.app/"}
+];
+---
+<style>
+
+	.display-screen{
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		width: 100%;
+		height: 100dvh;
+
+		background-color: var(--primary-clr-light);
+		z-index: 1000;
+	}
+
+	.hero{
+		display:flex;
+		flex-direction: column;
+		
+    	align-items: flex-start;
+		/* justify-content: center; */
+		
+	}
+
+	.hero-info{
+		display:flex;
+		flex-direction: column;
+		gap: 1em;
+
+		align-items: flex-start;
+		/* max-width: 400px; */
+	}
+
+	.hero-cta{
+		margin: 1em 0;
+
+	}
+
+	.hero-widgets{
+		display:grid;
+		grid-template-columns: 1fr 1fr;
+		width: 100%;
+
+		gap: 0.5em;
+	}
+
+	.hero-widgets > div{
+		width:100%;
+		/* border: solid var(--primary-clr-light) 2px;
+		background-color: #202020;
+		border-radius: 20px; */
+	}
+	
+	/* .widget--container{
+		padding: 1em;
+	} */
+
+	.subheader{
+		opacity: 0.83;
+	}
+	
+	.subtext{
+		font-size: .825rem;
+		opacity: 0.33;
+		
+		margin: .25em 0;
+	}
+	
+	.hero--panel{
+		width: 100%;
+		min-height: fit-content;
+		background-color: var(--accent-clr);
+
+	}
+
+	@media screen and (min-width: 768px){
+		.hero--container{
+			width:100%;
+			min-height: 100dvh;
+
+			display:flex;
+			flex-direction: row;
+		}
+
+		.hero--info{
+			width: 50%;
+			display: flex;
+			align-items: center;
+			justify-content:center;
+		}
+		.info--wrapper{
+			max-width: 400px;
+			display: flex;
+			flex-direction: column;
+			gap: 1em;
+		}
+		.hero--panel{
+			width: 50%;
+		}
+
+		/* .hero-widgets{
+			display:grid;
+			grid-template-columns: 1fr 1fr;
+			width: 100%;
+
+			gap: 0.5em;
+		}
+
+		.hero-widgets > div{
+			width:100%;
+			border: solid var(--primary-clr-light) 2px;
+			background-color: #202020;
+			border-radius: 20px;
+		} */
+		.widget-three{
+			grid-column: 1 / -1;
+		}
+	}
+
+</style>
+
+<Layout>
+	<section class="animation-open--container">
+		<div class="display-screen"></div>
+		<div class="display-screen"></div>
+		<div class="display-screen"></div>
+		<div class="display-screen"></div>
+		<div class="display-screen"></div>
+	</section>
+	<section class="hero">
+		<!-- <p class="smol--text">If your reading this, have a NICE DAY! :)</p> -->
+
+		<div class="hero--container">
+			<div class="hero--info">
+				<div class="info--wrapper">
+					<h1 class="title">Building Cool Stuff With Tech</h1>
+					<p>I'm a college web developer with an interest in creativity and building techical apps. You can see more of my stuff below</p>
+		
+					<div class="hero-cta">
+						<a href="assets/pdf/resume.pdf" target="_blank">
+							<button class="btn-primary">See Resume</button>
+						</a>
+					</div>
+					<div class="hero-widgets">
+						<div class="widget-one">
+							<div class="widget--container">
+								<h3 class="subheader">Socials</h3>
+								<p class="subtext">Be sure to follow!</p>
+								<LinkList links = { socialLinks } />
+							</div>
+						</div>
+						<div class="widget-two">
+							<div class="widget--container">
+								<h3 class="subheader">Some Cool Stuff</h3>
+								<p class="subtext">More will be posted later</p>
+								<LinkList links = { projectLinks } />
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div class="hero--panel">
+
+			</div>
+		</div>
+	</section>
+	<section class="projects">
+
+	</section>
+	<section>
+
+	</section>
+</Layout>
+
+<script>
+	import {animate} from 'animejs';
+
+	const displaySelectors = document.querySelectorAll(".display-screen");
+	console.log(displaySelectors);
+
+	const colors = [
+		"red",
+		"blue",
+		"gray",
+		"green",
+		"yellow"
+	]
+	displaySelectors.forEach( (display, i) => {
+		display.style.backgroundColor = `hsl(120, 50%, ${30 + i * 20}%)`;
+		display.style.zIndex = 10000 - (i * 100);
+		// display.style.opacity = 1 - (0.10 * 1)
+	})
+
+	animate(displaySelectors, {
+		scale: [
+			{ to: 1.25, ease: 'inOut(3)', duration: 200 },
+			{ to: 0, duration: 300 }
+		],
+		ease: "out",
+		// playbackEase: 'ouIn(5)',
+		// rotate: {
+		// 	from: "-1turn",
+		// 	delay: (_, i) => i* 10
+		// } ,
+		delay: (_, i) => i * 100,
+		onComplete: self => console.log(self),
+	})
+</script>
+

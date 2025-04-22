@@ -1,0 +1,161 @@
+/* Reset HTML Values */
+
+/* NOTE: Actually download the fonts before production */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+:root{
+    --primary-clr: #171717;
+    --primary-clr-dark: #111111;
+    --primary-clr-light: #303030;
+
+    --accent-clr: #40d91f;
+    --accent-clr-medium: #51e530;
+    --accent-clr-dark: #29b90a;
+
+    --secondary-clr: #626D58;
+
+    --white-clr: #eaeaea;
+
+
+    --font-size-title: 3rem;
+    --font-size-header: 2.75rem;
+    --font-size-subheader: 1.5rem;
+
+    --font-size-title-mb: 2.75rem;
+    --font-size-header-mb: 2.5rem;
+    --font-size-subheader-mb: 1.25rem;
+
+    --font-family: 'Space Grotesk', serif;
+    --font-family-default: 'Inter', sans-serif;
+}
+
+* {
+    margin: 0;
+}
+
+h1,
+h2,
+h3{
+    line-height: 1;
+    font-weight: 500;
+    font-family: var(--font-family);
+}
+
+h2{
+    font-size: var(--font-size-header-mb);
+}
+
+h3{
+    font-size: var(--font-size-subheader);
+}
+
+p{
+    line-height: 1.4;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+img,
+picture,
+svg,
+video{
+    max-width: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+button{
+    --hover-clr: #252525;
+
+    background-color: var(--primary-clr-light);
+    color: var(--white-clr);
+
+    padding: 0.5em 1em;
+
+    font-size: 1.125rem;
+    font-family: var(--font-family);
+    font-weight: 500;
+
+    border: none;
+    border-radius: 2.5em;
+
+    cursor: pointer;
+}
+
+button:hover{
+    background: var(--hover-clr);
+}
+
+.smol--text{
+    font-size: 1em;
+    font-family: var(--font-family);
+    margin: 1em 0;
+    color: var(--accent-clr);
+    font-weight: 500;
+} /* TO RENAME*/
+
+.btn-primary{
+    --hover-clr: var(--accent-clr);
+    background-color: var(--accent-clr-dark);
+
+    color: var(--primary-clr-dark);
+}
+
+
+ul[role="list"], 
+ol[role="list"]{
+    list-style: none;
+}
+
+
+body{
+    background-color: var(--primary-clr-dark);
+    color: var(--white-clr);
+    font-family: var(--font-family-default);
+}
+
+
+
+.highlight{
+    color: var(--accent-clr);
+}
+
+.title{
+    font-size: var(--font-size-title-mb);
+}
+
+.header{
+    font-size: var(--font-size-header-mb);
+}
+
+.subheader{
+    font-size: var(--font-size-subheader-mb);
+}
+
+.layout--container{
+    max-width: 68.75rem;
+    margin-inline: auto;
+    padding: 1em;
+}
+
+.blog--wrapper{
+    max-width: 46em;
+    margin-inline: auto;
+    padding: 1em;
+}
+
+
+@media screen and (min-width: 46em){
+    .title{
+        font-size: var(--font-size-title);
+    }
+
+    .header{
+        font-size: var(--font-size-header);
+    }
+
+    .subheader{
+        font-size: var(--font-size-subheader);
+    }
+}
