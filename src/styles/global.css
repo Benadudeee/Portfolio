@@ -10,6 +10,7 @@
     --primary-clr-light: #303030;
 
     --accent-clr: #40d91f;
+    --accent-clr-light: #6ef151;
     --accent-clr-medium: #51e530;
     --accent-clr-dark: #29b90a;
 
@@ -96,8 +97,8 @@ button:hover{
 } /* TO RENAME*/
 
 .btn-primary{
-    --hover-clr: var(--accent-clr);
-    background-color: var(--accent-clr-dark);
+    --hover-clr: var(--accent-clr-light);
+    background-color: var(--accent-clr);
 
     color: var(--primary-clr-dark);
 }
