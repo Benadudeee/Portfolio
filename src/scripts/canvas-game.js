@@ -1,5 +1,3 @@
-import { chunkToString } from "astro/runtime/server/render/common.js";
-
 const canvas = document.querySelector(".hero--panel");
 const ctx = canvas.getContext("2d");
 
