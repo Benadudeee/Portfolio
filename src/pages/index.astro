@@ -93,6 +93,14 @@ const projectLinks = [
 			
 		}
 		
+		.info--wrapper{
+			max-width: 400px;
+			display: flex;
+			flex-direction: column;
+			gap: 1em;
+			padding: 1.5em;
+		}
+
 		@media screen and (min-width: 768px){
 			.hero--container{
 				width:100%;
@@ -108,15 +116,14 @@ const projectLinks = [
 				align-items: center;
 				justify-content:center;
 			}
-			.info--wrapper{
-				max-width: 400px;
-				display: flex;
-				flex-direction: column;
-				gap: 1em;
+
+			.hero--panel{
+				width: 50%;
 			}
-		.hero--panel{
-			width: 50%;
-		}
+
+			.info--wrapper{
+				padding: 0;
+			}
 
 		/* .hero-widgets{
 			display:grid;
