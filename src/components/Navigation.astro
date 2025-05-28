@@ -7,20 +7,89 @@ import "../styles/global.css"
         min-height: 80px;
         border-bottom: 2px solid var(--accent-clr);
     } 
+
+        /* HEADER */
+    .navigation{
+        --nav-mb-size: 1rem;
+        --nav-pc-size: 1.125rem;
+        --nav-padding-mb: 1em;
+        display: flex;
+        padding: 1em 0;
+    }
+    .nav-brand{
+        display:flex;
+        width: 100%;
+        justify-content: space-between;
+    }
+    .nav-container{
+        width: 100%;
+    }
+    .nav-item-container{
+        padding: 0;
+        display:none;
+    }
+    .nav-item{
+        list-style-type:none;
+        font-size: var(--nav-mb-size);
+        margin: 1em auto;
+    }
+
+    .nav-link{
+        text-decoration: none;
+        color: var(--main-color);
+    }
+
+.nav-link:hover{
+    color: var(--main-color-hover);
+}
+
+.expanded{
+    display:unset;
+}
+
+@media screen and (min-width: 768px){
+    .container{
+        padding: 0;
+    }
+
+    .nav-brand{
+        width: fit-content;
+    }
+
+    .nav-container{
+        display:flex;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-item-container{
+        display:flex;
+        gap: 0.75em;
+    }
+    
+    .nav-item{
+        font-size: var(--nav-pc-size);
+        list-style-type:none;
+    }
+}
 </style>
 
 
-<header class="site--navigation">
-    <nav>
-        <div class="logo">
+<header class="navigation">
+	<nav class="nav-container wrapper">
+		<div class="nav-brand">
+			Portfolio
+				<!-- <ThemeIcon />
+				<Hamburger /> -->
+		</div>
+		<ul class="nav-item-container">
+			<li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+			<li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+			<li class="nav-item"><a class="nav-link" href="/blog">Blog</a></li>
+			<li class="nav-item"><a class="nav-link" href="/projects">Projects</a></li>
+		</ul>
 
-        </div>
-        <ul class="links">
-            <!-- <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li> -->
-        </ul>
-    </nav>
+	</nav>
 </header>
