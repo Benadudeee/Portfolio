@@ -29,6 +29,9 @@
 
     --font-family: 'Space Grotesk', serif;
     --font-family-default: 'Inter', sans-serif;
+
+    --wrapper-size: 1150px;
+    --wrapper-size-mb: calc(100% - 2em);
 }
 
 * {
@@ -88,20 +91,6 @@ button:hover{
     background: var(--hover-clr);
 }
 
-.smol--text{
-    font-size: 1em;
-    font-family: var(--font-family);
-    margin: 1em 0;
-    color: var(--accent-clr);
-    font-weight: 500;
-} /* TO RENAME*/
-
-.btn-primary{
-    --hover-clr: var(--accent-clr-light);
-    background-color: var(--accent-clr);
-
-    color: var(--primary-clr-dark);
-}
 
 
 ul[role="list"], 
@@ -122,6 +111,21 @@ body{
     color: var(--accent-clr);
 }
 
+.smol--text{
+    font-size: 1em;
+    font-family: var(--font-family);
+    margin: 1em 0;
+    color: var(--accent-clr);
+    font-weight: 500;
+} /* TO RENAME*/
+
+.btn-primary{
+    --hover-clr: var(--accent-clr-light);
+    background-color: var(--accent-clr);
+
+    color: var(--primary-clr-dark);
+}
+
 .title{
     font-size: var(--font-size-title-mb);
 }
@@ -132,6 +136,11 @@ body{
 
 .subheader{
     font-size: var(--font-size-subheader-mb);
+}
+
+.wrapper{
+    max-width: var(--wrapper-size-mb);
+    margin: auto;
 }
 
 .layout--container{
@@ -146,6 +155,98 @@ body{
     padding: 1em;
 }
 
+.section--wrapper{
+    padding: 2em 0;
+}
+
+/* layout.css: Contains styles for simple layouts to modify styles */
+
+.flex-wrap{
+    display: flex;
+    flex-wrap:wrap;
+    gap: .25em;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: column;
+    gap:12px;
+}
+
+.flex-col{
+    display:flex;
+    flex-direction: column;
+}
+
+.flex{
+    display: flex;
+}
+
+.col{
+    display: grid;
+    gap: 20px;
+}
+
+.col-2 > img{
+    width: 100%;
+}
+
+
+.col-3 > img{
+    width: 100%;
+}
+
+.col-4 > img{
+    width: 100%;
+}
+
+.col-2, .col-4{
+    display:grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap:20px;
+}
+
+.col-3{
+    display: grid;
+    gap:20px;
+}
+
+
+@media screen and (min-width:590px){
+    .col-2, .col-4{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width:768px){
+    .col-3{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .col-4{
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .flex-row > div{
+        width: 50%;
+    }
+     
+    .flex-row{
+       display:flex;
+        flex-direction: row;
+        justify-content:space-between;
+        gap: 10px;
+        align-items:center;
+      }
+
+    .wrapper{
+        max-width: var(--wrapper-size);
+    }
+    
+    .section--wrapper{
+        padding: 5em 0;
+    }
+}
 
 @media screen and (min-width: 46em){
     .title{
