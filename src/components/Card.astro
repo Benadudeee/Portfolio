@@ -1,0 +1,72 @@
+---
+const {classes} = Astro.props;
+---
+
+<style>
+    .card{
+        --card-title-size: 1.5em;
+        --card-padding: 1em;
+        --card-padding--inner: 1em;
+
+        --card-text-size: 1em;
+        --card-border-radius: 2em;
+        --card-border: .25em solid var(--secondary-clr);
+
+        background-color: var(--accent-clr);
+        color:var(--secondary-clr);
+        padding: var(--card-padding);
+
+        border: var(--card-border);
+        border-radius: var(--card-border-radius);
+        
+        /* box-shadow: 0 10px 5px black; */
+        max-width: 100%;
+        height: 360px;
+    }
+    
+    .card--inner{
+        border: var(--card-border);
+        border-color: var(--primary-clr);
+        padding: var(--card-padding);
+        border-radius: calc(var(--card-border-radius) - var(--card-padding--inner));
+
+        height: 100%;
+    }
+
+    .card--title{
+        font-size: var(--card-title-size);
+        margin-bottom: .75em;
+    }
+
+    .card--description{
+        font-size: var(--font-size-text-sm);
+    }
+
+    /* Extra Classes */
+    .card--techstack{
+        height:fit-content;
+        width:fit-content;
+
+        padding: .25em;
+        border-radius: 1em;
+    }
+
+    .card--techstack > .card--inner{
+        padding: .25em;
+        border-radius: .75em;
+    }
+
+    .card--inner > .card--techstack--icon{
+        width: 80px;
+    }  
+</style>
+
+<article class=`card ${classes}`>
+    <div class="card--inner">
+        <slot/>
+    </div>
+</article>
+
+<script>
+
+</script>

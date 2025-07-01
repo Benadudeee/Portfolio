@@ -1,8 +1,12 @@
 ---
+// import "../styles/global.css";
+
 import Layout from '../layouts/Layout.astro';
-import BlogLayout from '../layouts/BlogLayout.astro';
-import LinkList from '../components/LinkList.astro';
-import "../styles/global.css";
+import Accordion from "../components/Accordion.astro";
+import Card from "../components/Card.astro";
+
+import "../styles/pages/index.css";
+
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -18,222 +22,110 @@ const projectLinks = [
 	{text: "Simple Astro Blog", url: "https://astro-blogging-tutoriall.netlify.app/"},
 	{text: "Vacation Page", url: "https://vacation-page.netlify.app/"}
 ];
+
+const project_matches = import.meta.glob('../pages/projects/*.md', { eager: true });
+const projects = Object.values(project_matches).slice(0, 3);
+
+
+const blog_matches = import.meta.glob("../pages/blog/*.md", { eager: true });
+const blog_posts = Object.values(blog_matches).slice(0, 3);
+
+const tech_stack_icons_obj = import.meta.glob("../../public/images/icons/*.*", {eager: true});
+const tech_stack_icons = Object.values(tech_stack_icons_obj);
+// const blog_posts = Object.values(blog_matches).slice(0, 4);
+
+tech_stack_icons.forEach( (stack : any) => stack.default.width = 80)
 ---
-<style>
 
-	.display-screen{
-		position: absolute;
-		top: 0;
-		left: 0;
-
-		width: 100%;
-		height: 100dvh;
-		
-		background-color: var(--primary-clr-light);
-		z-index: 1000;
-	}
-	
-	.hero{
-		display:flex;
-		flex-direction: column;
-		
-    	align-items: flex-start;
-		/* justify-content: center; */
-		
-	}
-	
-	.hero-info{
-		display:flex;
-		flex-direction: column;
-		gap: 1em;
-		
-		align-items: flex-start;
-		/* max-width: 400px; */
-	}
-	
-	.hero-cta{
-		margin: 1em 0;
-		
-	}
-	
-	.hero-widgets{
-		display:grid;
-		grid-template-columns: 1fr 1fr;
-		width: 100%;
-		
-		gap: 0.5em;
-	}
-	
-	.hero-widgets > div{
-		width:100%;
-		/* border: solid var(--primary-clr-light) 2px;
-		background-color: #202020;
-		border-radius: 20px; */
-	}
-	
-	/* .widget--container{
-		padding: 1em;
-		} */
-		
-		.subheader{
-			opacity: 0.83;
-		}
-		
-		.subtext{
-			font-size: .825rem;
-			opacity: 0.33;
-			
-			margin: .25em 0;
-		}
-		
-		.hero--panel{
-			width: 100%;
-			min-height: fit-content;
-			background-color: var(--accent-clr);
-			
-		}
-		
-		.info--wrapper{
-			max-width: 400px;
-			display: flex;
-			flex-direction: column;
-			gap: 1em;
-			padding: 1.5em;
-		}
-
-		@media screen and (min-width: 768px){
-			.hero--container{
-				width:100%;
-				min-height: 100dvh;
-				
-				display:flex;
-				flex-direction: row;
-			}
-			
-			.hero--info{
-				width: 50%;
-				display: flex;
-				align-items: center;
-				justify-content:center;
-			}
-
-			.hero--panel{
-				width: 50%;
-			}
-
-			.info--wrapper{
-				padding: 0;
-			}
-
-		/* .hero-widgets{
-			display:grid;
-			grid-template-columns: 1fr 1fr;
-			width: 100%;
-			
-			gap: 0.5em;
-			}
-			
-			.hero-widgets > div{
-				width:100%;
-				border: solid var(--primary-clr-light) 2px;
-				background-color: #202020;
-				border-radius: 20px;
-				} */
-				.widget-three{
-					grid-column: 1 / -1;
-				}
-	}
-
-	</style>
 
 <Layout>
-	<!-- <section class="animation-open--container">
-		<div class="display-screen"></div>
-		<div class="display-screen"></div>
-		<div class="display-screen"></div>
-		<div class="display-screen"></div>
-		<div class="display-screen"></div>
-		</section> -->
-		<section class="hero">
-			<!-- <p class="smol--text">If your reading this, have a NICE DAY! :)</p> -->
+	 <section class="hero">
+        <div class="site-container hero--container">
+			<div class="hero--hello">
+				<div class="hero--hello--icon">
+					<img class="icon--img" src="/svg/hand_wave.svg" alt="Saying hello">
+				</div>
+			</div>
 			
-			<div class="hero--container">
-				<div class="hero--info">
-					<div class="info--wrapper">
-						<h1 class="title">Building Cool Stuff With Tech</h1>
-					<p>I'm a college web developer with an interest in creativity and building techical apps. You can see more of my stuff below</p>
-		
-					<div class="hero-cta">
-						<a href="assets/pdf/resume.pdf" target="_blank">
-							<button class="btn-primary">See Resume</button>
-						</a>
+            <div class="hero--content--inner">
+				<div class="hero--url--container">
+					<p>https://portfolio.blog</p>
+				</div>
+                <div class="hero--info--container col-2">
+					<div class="hero--info text-content flex-col">
+						<h1 class="title hero--title">Hi I Like Making Cool Stuff With Tech</h1>
+						<p class="hero--about">I'm a web developer and a college student that's building and learning how to make great software. I mostly create fullstack apps though I do love building in the frontend</p>
+						<!-- Hello Friend -->
+						
+						<a href="/pdf/resume.pdf" class="btn cta-btn dark">See Resume</a>
 					</div>
-					<div class="hero-widgets">
-						<div class="widget-one">
-							<div class="widget--container">
-								<h3 class="subheader">Socials</h3>
-								<p class="subtext">Be sure to follow!</p>
-								<LinkList links = { socialLinks } />
-							</div>
+					<div class="hero--info--image">
+						<img src="images/cat-spinning.gif" alt="The meme of a spinning cat a temporary photo until I find something better" srcset="">
+						<p>This is a placeholder image ^^</p>
+					</div>
+					<div class="hero--techstack col-2">
+						<div class="hero--techstack--content text-content flex-col">
+							<h3>My Tech Stack</h3>
+							<p>Here are some of the things I like to use when building websites and web apps</p>
 						</div>
-						<div class="widget-two">
-							<div class="widget--container">
-								<h3 class="subheader">Some Cool Stuff</h3>
-								<p class="subtext">More will be posted later</p>
-								<LinkList links = { projectLinks } />
-							</div>
+
+						<div class="techstack--cards flex-row">
+							{ 
+								tech_stack_icons.map( (stack : any) => (
+									<Card classes="card--techstack"> 
+										<img class="card--techstack--icon" width=80 height=80 src={ stack.default.src } />
+									</Card>
+								))
+							}
 						</div>
 					</div>
 				</div>
-				
-			</div>
-			<canvas class="hero--panel">
-				
-			</canvas>
-		</div>
-	</section>
-	<section class="projects">
-		
-	</section>
-	<section>
 
-	</section>
+
+            </div>
+        </div>
+        </div>
+	 </section>
+	 <section class="projects">
+        <div class="site-container projects--container">
+			<div class="project--heading flex-col text-content wrapper sm">
+				<h2 class="project--title">Projects I've Made Over the Years</h2>
+				<p>
+				   Here are all main projects I've been working on for the past few years. 
+				   You can get all the projects I've done (Just not for now)
+				</p>
+			</div>
+
+			<div class="col-3 projects--cards">
+				<Card classes="red">
+					<p>Card 1</p>
+				</Card>
+				<Card>
+					<p>Card 2</p>
+				</Card>
+				<Card>
+					<p>Card 3</p>
+				</Card>
+			</div>
+        </div>
+	 </section>
+
 </Layout>
 
-<script>
-	import {animate} from 'animejs';
-	import "../scripts/canvas-game.js";
 
-
-	const displaySelectors = document.querySelectorAll(".display-screen");
-	console.log(displaySelectors);
-	
-	const colors = [
-		"red",
-		"blue",
-		"gray",
-		"green",
-		"yellow"
-	]
-	displaySelectors.forEach( (display, i) => {
-		display.style.backgroundColor = `hsl(120, 50%, ${30 + i * 20}%)`;
-		display.style.zIndex = 10000 - (i * 100);
-		// display.style.opacity = 1 - (0.10 * 1)
-	})
-
-	animate(displaySelectors, {
-		scale: [
-			{ to: 1.25, ease: 'inOut(3)', duration: 200 },
-			{ to: 0, duration: 300 }
-		],
-		ease: "out",
-		// playbackEase: 'ouIn(5)',
-		// rotate: {
-		// 	from: "-1turn",
-		// 	delay: (_, i) => i* 10
-		// } ,
-		delay: (_, i) => i * 100,
-		onComplete: self => console.log(self),
-	})
-</script>
+<!-- Maps Project Cards -->
+// <!-- {
+// 	projects.map( (project : any) => (
+// 			<article class="card article">
+// 				<p class="card--title">{project.frontmatter.title} </p>
+// 				<div class="tags--container flex-row">
+// 					<p class="tag">Tag 1</p>
+// 					<p class="tag">Tag 2</p>
+// 					<p class="tag">Tag 3</p>
+// 				</div>
+// 				<p class="card--description">{project.frontmatter.description}</p>
+// 			</article>
+// 		)
+// 	)
+// } -->
 

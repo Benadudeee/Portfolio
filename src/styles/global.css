@@ -1,263 +1,234 @@
-/* Reset HTML Values */
-
-/* NOTE: Actually download the fonts before production */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Space+Grotesk:wght@300..700&display=swap');
+/* General Site Variables */
+@import url("https://fonts.googleapis.com/css?family=Inter:400,400i,600,700,800");
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
 
 :root{
-    --primary-clr: #171717;
-    --primary-clr-dark: #111111;
-    --primary-clr-light: #303030;
+    --primary-clr: #131514;
+    --primary-clr-light: #252825;
 
-    --accent-clr: #40d91f;
-    --accent-clr-light: #6ef151;
-    --accent-clr-medium: #51e530;
-    --accent-clr-dark: #29b90a;
+    --accent-clr: #66c84c;
+    --accent-clr-light: hsl(107, 53%, 75%);
+    --accent-clr-hover: hsl(107, 53%, 70%);
 
-    --secondary-clr: #626D58;
+    --secondary-clr: black;
+    
+    --main-text-clr: #e0e0e0;
 
-    --white-clr: #eaeaea;
+    --text-opacity-high: 1;
+    --text-opacity-medium: 1;
+    --text-opacity-low: 0.67;
+    
+    --font-family-header: 'Space Grotesk' , sans-serif;
+    --font-family-text: sans-serif;
+    --font-family-btn: 'Space Grotesk' , sans-serif;
 
+    --text-line-height: 1.6;
+    --header-line-height: 1.1;
+    
+    /* Font sizes large Screens */
+    --font-size-header-xl: 3rem;
+    --font-size-header-lg: 2.25rem;
+    --font-size-header-md: 2rem;
+    --font-size-header-sm: 1.75rem;
 
-    --font-size-title: 3rem;
-    --font-size-header: 2.75rem;
-    --font-size-subheader: 1.5rem;
+    --font-size-text: 1.25rem;
+    --font-size-text-sm: 1rem;
+    --font-size-text-xs: .825rem;
 
-    --font-size-title-mb: 2.75rem;
-    --font-size-header-mb: 2.5rem;
-    --font-size-subheader-mb: 1.25rem;
+    /* Font sizes small screens */
+    --font-size-title-mobile: 2.5rem;
+    
+    --button-border-radius: 3rem;
 
-    --font-family: 'Space Grotesk', serif;
-    --font-family-default: 'Inter', sans-serif;
+    --site-wrapper-size: 1224px;
+    --site-wrapper-min-size: calc(100% - 2em);
 
-    --wrapper-size: 1150px;
-    --wrapper-size-mb: calc(100% - 2em);
+    /* Spacing */
+    --spacing-3xl: 5em;
+    --spacing-2xl: 3.5em;
+    --spacing-xxl: 3em;
+    --spacing-xl: 2em;
+    --spacing-lg: 1em;
+    --spacing-md: .75em;
+    --spacing-sm: .5em;
+    --spacing-xs: .25em;
+
+}
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--primary-clr);
+    margin:0;
+    padding:0;
+    color: var(--main-text-clr);
+    font-family: 'Inter', sans-serif;
+}
+  
+section, footer{
+    padding: 4em 0;
 }
 
-* {
-    margin: 0;
+.section-topper{
+    color: var(--accent-clr);
+    font-weight: 600;
+    opacity: var(--text-opacity-medium);
 }
 
-h1,
-h2,
-h3{
-    line-height: 1;
-    font-weight: 500;
-    font-family: var(--font-family);
-}
-
-h2{
-    font-size: var(--font-size-header-mb);
-}
-
-h3{
-    font-size: var(--font-size-subheader);
+.section-topper-dark{
+    color: var(--primary-clr);
 }
 
 p{
-    line-height: 1.4;
-    font-weight: 400;
-    font-size: 1rem;
+    font-size: var(--font-size-text);
+    opacity: var(--text-opacity-medium);
+    font-weight: 500;
+    line-height: var(--text-line-height);
 }
 
-img,
-picture,
-svg,
-video{
+
+img, svg, video{
     max-width: 100%;
-    display: block;
-    object-fit: contain;
+    height: auto;
+    object-fit: cover;
 }
 
-button{
-    --hover-clr: #252525;
-
-    background-color: var(--primary-clr-light);
-    color: var(--white-clr);
-
-    padding: 0.5em 1em;
-
-    font-size: 1.125rem;
-    font-family: var(--font-family);
-    font-weight: 500;
-
-    border: none;
-    border-radius: 2.5em;
-
-    cursor: pointer;
+h1, h2, h3, h4, h5, h6{
+    font-family: var(--font-family-header);
+    font-weight: 700;
+    line-height: var(--header-line-height);
+    letter-spacing: -1px;
 }
 
-button:hover{
-    background: var(--hover-clr);
+h1{
+    font-size: var(--font-size-title-mobile);
 }
 
-
-
-ul[role="list"], 
-ol[role="list"]{
-    list-style: none;
+h2{
+    font-size: var(--font-size-header-lg);
 }
 
-
-body{
-    background-color: var(--primary-clr-dark);
-    color: var(--white-clr);
-    font-family: var(--font-family-default);
+h3{
+    font-size: var(--font-size-header-md);
 }
 
-
-
-.highlight{
-    color: var(--accent-clr);
-}
-
-.smol--text{
-    font-size: 1em;
-    font-family: var(--font-family);
-    margin: 1em 0;
-    color: var(--accent-clr);
-    font-weight: 500;
-} /* TO RENAME*/
-
-.btn-primary{
-    --hover-clr: var(--accent-clr-light);
-    background-color: var(--accent-clr);
-
-    color: var(--primary-clr-dark);
+a{
+    color: var(--text-clr);
+    font-weight: 600;
+    text-decoration:none;
+    font-family: var(--font-family-btn);
 }
 
 .title{
-    font-size: var(--font-size-title-mb);
+    font-size: var(--font-size-header-xl);
 }
 
-.header{
-    font-size: var(--font-size-header-mb);
+.btn{
+    background-color: var(--accent-clr);
+    color: var(--primary-clr);
+    padding: var(--spacing-md);
+    border-radius: var(--button-border-radius);
+    font-size: 1.125rem;
 }
 
-.subheader{
-    font-size: var(--font-size-subheader-mb);
+.btn.dark{
+    background-color: var(--primary-clr);
+    color: var(--main-text-clr);
+}
+  
+.btn:hover{
+    background-color: var(--accent-clr-hover);
 }
 
-.wrapper{
-    max-width: var(--wrapper-size-mb);
+.btn.dark:hover{
+    background-color: var(--primary-clr-light);
+}
+
+.site-container{
+    max-width: var(--site-wrapper-size);
+    width: var(--site-wrapper-min-size);
     margin: auto;
 }
 
-.layout--container{
-    max-width: 68.75rem;
-    margin-inline: auto;
+.form-container{
+    gap: 12px;
+    align-items: flex-start;
+    align-content: flex-end;
+    max-width: 450px;
+}
+
+input[type="text"], textarea{
+    width: 100%;
     padding: 1em;
+    font-size: var(--font-size-text-sm);
+    background-color: var(--primary-clr-light);
+    color: var(--text-clr);
+    border:none;
 }
 
-.blog--wrapper{
-    max-width: 46em;
-    margin-inline: auto;
-    padding: 1em;
+input[type="submit"]{
+    border: 0;
+    font-weight: 600;
+    font-size:var(--font-size-text-sm);
+    padding: .75em 1em;
 }
 
-.section--wrapper{
-    padding: 2em 0;
+.highlight{
+    color: var(--accent-clr-light);
+    border-bottom: 12px solid var(--accent-clr);
 }
 
-/* layout.css: Contains styles for simple layouts to modify styles */
-
-.flex-wrap{
-    display: flex;
-    flex-wrap:wrap;
-    gap: .25em;
+.red{
+    --accent-clr: #EE2E31;
 }
 
-.flex-row{
-    display: flex;
-    flex-direction: column;
-    gap:12px;
+.glowing{
+    text-shadow: 
+    0 4px 5em var(--accent-clr),
+    4px 0 4em var(--accent-clr-light)
+        ;
 }
 
-.flex-col{
+.text-opacity-high{
+    opacity: var(--text-opacity-high);
+}
+
+.text-opacity-medium{
+    opacity: var(--text-opacity-medium);
+}
+
+.text-opacity-low{
+    opacity: var(--text-opacity-low);
+}
+
+/* Hero */
+.text-content{
+    gap: 1.5em;
+    align-items: flex-start;
+}
+
+.card--column{
     display:flex;
-    flex-direction: column;
+    flex-direction:column;
+    gap: 3em;
 }
 
-.flex{
+
+
+.column--features{
+    gap: 1.5em;
+}
+
+.column--features > h3{
+    font-size: var(--font-size-header-md);
+}
+
+.form--group{
     display: flex;
-}
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
 
-.col{
-    display: grid;
-    gap: 20px;
-}
-
-.col-2 > img{
-    width: 100%;
-}
-
-
-.col-3 > img{
-    width: 100%;
-}
-
-.col-4 > img{
-    width: 100%;
-}
-
-.col-2, .col-4{
-    display:grid;
-    width: 100%;
-    grid-template-columns: 1fr;
-    gap:20px;
-}
-
-.col-3{
-    display: grid;
-    gap:20px;
-}
-
-
-@media screen and (min-width:590px){
-    .col-2, .col-4{
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media screen and (min-width:768px){
-    .col-3{
-        grid-template-columns: repeat(3, 1fr);
-    }
-    .col-4{
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-    .flex-row > div{
-        width: 50%;
-    }
-     
-    .flex-row{
-       display:flex;
-        flex-direction: row;
-        justify-content:space-between;
-        gap: 10px;
-        align-items:center;
-      }
-
-    .wrapper{
-        max-width: var(--wrapper-size);
-    }
-    
-    .section--wrapper{
-        padding: 5em 0;
-    }
-}
-
-@media screen and (min-width: 46em){
-    .title{
-        font-size: var(--font-size-title);
-    }
-
-    .header{
-        font-size: var(--font-size-header);
-    }
-
-    .subheader{
-        font-size: var(--font-size-subheader);
-    }
 }

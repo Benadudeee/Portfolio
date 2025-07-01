@@ -1,6 +1,9 @@
 ---
-import "../styles/global.css"
 import Navigation from "../components/Navigation.astro"
+import Footer from "../components/Footer.astro"
+
+import "../styles/global.css"
+import "../styles/layouts.css"
 ---
 
 <!doctype html>
@@ -13,8 +16,9 @@ import Navigation from "../components/Navigation.astro"
 		<title>Site Portfolio</title>
 	</head>
 	<body>
-		<!-- <Navigation></Navigation> -->
-		<slot />
+		<Navigation />
+			<slot />
+		<Footer />
 	</body>
 </html>
 
