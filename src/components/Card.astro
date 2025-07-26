@@ -1,7 +1,5 @@
 ---
-import { undefined } from "astro:schema";
-
-const {classes, url} = Astro.props;
+const {classes} = Astro.props;
 ---
 
 <style>
@@ -74,7 +72,6 @@ const {classes, url} = Astro.props;
 
 <article class=`card ${classes}`>
     <div class="card--inner">
-        { (url !== "" && url !== undefined)? <div class="hero--url--container"><p>{url}</p> </div> : null}
         <div class="card--inner--content">
             <slot/>
         </div>
