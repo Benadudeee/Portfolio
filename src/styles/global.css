@@ -112,6 +112,15 @@ ul{
     list-style-type: none;
 }
 
+.link--item{
+    display:flex;
+    align-items:center;
+}
+
+.link--container > img{
+    width: 48px;
+}
+
 .link{
     opacity: 0.67;
     font-size: 1.25rem;

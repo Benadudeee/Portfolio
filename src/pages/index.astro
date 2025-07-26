@@ -29,12 +29,13 @@ const projects = Object.values(projectMatches).slice(0, 4);
 const blogMatches = import.meta.glob("../pages/blog/*.md", { eager: true });
 const posts = Object.values(blogMatches).slice(0, 3);
 
-const iconsObj = import.meta.glob("../../public/images/icons/*.*", {eager: true});
+const iconsObj = import.meta.glob("../../public/svg/techstack/*.svg", {eager: true});
 const icons = Object.values(iconsObj);
 const iconSize = 24;
 // const blog_posts = Object.values(blog_matches).slice(0, 4);
-console.log(icons);
+
 icons.forEach( (stack : any) => stack.default.width = iconSize);
+console.log(icons);
 ---
 
 
@@ -57,10 +58,10 @@ icons.forEach( (stack : any) => stack.default.width = iconSize);
 		</div>
 		<div class="hero--links flex-col">
 			<h1 class="links--header">Links</h1>
-
+			<img class="links--icon" src="/svg/techstack/postgres.svg"  />
 			{/* TODO: Add Responsive Arrow Svg Icon */} 
 			<ul class="links--container flex-col">
-				{socialLinks.map((social : any) => <li> <a href={social.url} class="link">{social.text}</a> </li>)}
+				{socialLinks.map((social : any) => <li class="link--item--container"> <a href={social.url} target="_blank" class="link">{social.text}</a> <img src="svg/arrow.svg" class="link--arrow"/> </li>)}
 			</ul>
 		</div>
 	</section>
