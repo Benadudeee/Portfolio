@@ -1,5 +1,6 @@
 ---
 // import "../styles/global.css";
+// TODO: PUSH DESIGN ASSETS (LOGOS, SVG, COMPONENTS) INSIDE THE DAME PROJECT
 
 import Layout from '../layouts/Layout.astro';
 import Accordion from "../components/Accordion.astro";
@@ -8,13 +9,11 @@ import Card from "../components/Card.astro";
 import "../styles/pages/index.css";
 
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
-
 const socialLinks = [ 
-	{text: "linkedin", url:"https://www.linkedin.com/in/benedict-antwi-607270278/"},
-	{text: "github", url: "https://github.com/Benadudeee"},
-	{text: "handshake", url:"https://app.joinhandshake.com/profiles/mu3av9"}
+	{text: "Github", url: "https://github.com/Benadudeee"},
+	{text: "Handshake", url:"https://app.joinhandshake.com/profiles/mu3av9"},
+	{text: "Linkedin", url:"https://www.linkedin.com/in/benedict-antwi-607270278/"},
+	{text: "Instagram", url: "https://www.instagram.com/ben.woo.webdev/"}
 ];
 
 const projectLinks = [
@@ -23,109 +22,138 @@ const projectLinks = [
 	{text: "Vacation Page", url: "https://vacation-page.netlify.app/"}
 ];
 
-const project_matches = import.meta.glob('../pages/projects/*.md', { eager: true });
-const projects = Object.values(project_matches).slice(0, 3);
+const projectMatches = import.meta.glob('../pages/projects/*.md', { eager: true });
+const projects = Object.values(projectMatches).slice(0, 4);
 
 
-const blog_matches = import.meta.glob("../pages/blog/*.md", { eager: true });
-const blog_posts = Object.values(blog_matches).slice(0, 3);
+const blogMatches = import.meta.glob("../pages/blog/*.md", { eager: true });
+const posts = Object.values(blogMatches).slice(0, 3);
 
-const tech_stack_icons_obj = import.meta.glob("../../public/images/icons/*.*", {eager: true});
-const tech_stack_icons = Object.values(tech_stack_icons_obj);
+const iconsObj = import.meta.glob("../../public/images/icons/*.*", {eager: true});
+const icons = Object.values(iconsObj);
+const iconSize = 24;
 // const blog_posts = Object.values(blog_matches).slice(0, 4);
-
-tech_stack_icons.forEach( (stack : any) => stack.default.width = 80)
+console.log(icons);
+icons.forEach( (stack : any) => stack.default.width = iconSize);
 ---
 
 
 <Layout>
-	 <section class="hero">
-        <div class="site-container hero--container">
-			<div class="hero--hello">
-				<div class="hero--hello--icon">
-					<img class="icon--img" src="/svg/hand_wave.svg" alt="Saying hello">
+	<section class="hero site-container col-2">
+		<div class="hero--content--container">
+			<div class="status">
+				<p>Status: In College</p>
+			</div>
+	
+			<div class="hero--content">
+				<h1 class="hero--title">Hi, I'm a Full Stack Developer That Loves Building Cool Stuff</h1>
+				<p>I'm a college web developer based in Worcester, MA. I like to create web software for myself and others. </p>
+
+				<div class="hero--options">
+					<button class="cta--btn btn">Get In Touch</button>
+					<button class="btn">See Resume</button>
 				</div>
+			</div>
+		</div>
+		<div class="hero--links flex-col">
+			<h1 class="links--header">Links</h1>
+
+			{/* TODO: Add Responsive Arrow Svg Icon */} 
+			<ul class="links--container flex-col">
+				{socialLinks.map((social : any) => <li> <a href={social.url} class="link">{social.text}</a> </li>)}
+			</ul>
+		</div>
+	</section>
+	<section class="techstack flex-row site-container">
+		<h3 class="techstack--title">TechStack</h3>
+		{/* Icons will be exported with their color, no need for color logic */}
+		<div class="techstack--item--container">
+			<div class="techstack--container flex-row">
+				{ icons.map( (icon: any) => <img src={icon.default.src} width={iconSize} height={iconSize} /> )  }
+			</div>
+			<a class="link techstack--link">See All</a>
+		</div>
+	</section>
+
+	<section class="projects site-container ">
+		<div class="projects--header flex-row">
+			<h1>Projects</h1>
+			<button class="cta--btn btn"> See All Projects</button>
+		</div>
+
+		{/*
+		 TODO: Add custom properties to config
+
+			plugin setup: https://docs.astro.build/en/guides/markdown-content/#markdown-plugins
+			frontmatter docs: https://docs.astro.build/en/guides/markdown-content/
+		 */}  
+		<Card classes="project-card--container" >
+			<div class="project-card--inner flex-col">
+				{projects.map((project: any) => (
+
+					<div class="project--item">
+						<h3 class="project--title">{project.frontmatter.title}</h3> 
+						<p class="project--description">{project.frontmatter.description}</p>
+
+						<div class="project--options flex-row">
+						    <a href="" class="link sm">See Github</a>
+						    <a href="" class="link sm cta">View Project</a>
+						</div>
+					</div>
+
+					<div class="separator"></div>
+
+				))}
 			</div>
 			
-            <div class="hero--content--inner">
-				<div class="hero--url--container">
-					<p>https://portfolio.blog</p>
-				</div>
-                <div class="hero--info--container col-2">
-					<div class="hero--info text-content flex-col">
-						<h1 class="title hero--title">Hi I Like Making Cool Stuff With Tech</h1>
-						<p class="hero--about">I'm a web developer and a college student that's building and learning how to make great software. I mostly create fullstack apps though I do love building in the frontend</p>
-						<!-- Hello Friend -->
-						
-						<a href="/pdf/resume.pdf" class="btn cta-btn dark">See Resume</a>
-					</div>
-					<div class="hero--info--image">
-						<img src="images/cat-spinning.gif" alt="The meme of a spinning cat a temporary photo until I find something better" srcset="">
-						<p>This is a placeholder image ^^</p>
-					</div>
-					<div class="hero--techstack col-2">
-						<div class="hero--techstack--content text-content flex-col">
-							<h3>My Tech Stack</h3>
-							<p>Here are some of the things I like to use when building websites and web apps</p>
-						</div>
+		</Card>
+	</section>
 
-						<div class="techstack--cards flex-row">
-							{ 
-								tech_stack_icons.map( (stack : any) => (
-									<Card classes="card--techstack"> 
-										<img class="card--techstack--icon" width=80 height=80 src={ stack.default.src } />
-									</Card>
-								))
-							}
+	<section class="about-me flex-col site-container">
+		<div class="about-me--content">
+			<h1 class="about-me--header">About Me</h1>
+			<Card>
+					<div class="about-me-content--inner">
+					<p class="about-me--about">Hi, I'm Benedict Antwi! I'm currently in my Junior year of Computer Science in WPI. My passion for software development started when I learned to make video games in my old computer.</p>
+	
+					<div class="about-me--segments flex-col">
+						<div class="segment">
+							<h4 class="segment--title">Hobbies</h4>
+							<p class="segment--items">Drawing, Coding, Calisthenics, Wrestling</p>
+						</div>
+						<div class="segment">
+							<h4 class="segment--title">Games I Like</h4>
+							<p class="segment--items">Brawlhalla, Epic Battle Fantasy, Minecraft, Roblox, Deltarune</p>
+						</div>
+						<div class="segment">
+							<h4 class="segment--title">Shows I Love</h4>
+							<p class="segment--items">Bojack Horseman, Breaking Bad, Top Boy</p>
 						</div>
 					</div>
 				</div>
+			</Card>
+		</div>
+		
+		<div class="about-me--posts">
+			<h1 class="posts--title">Posts</h1>
 
+			<div class="posts--container">
+				{ posts.map( (post : any) => (
+					<div class="post-item sm">
+						<h3 class="post--title">{post.frontmatter.title}</h3>
 
-            </div>
-        </div>
-        </div>
-	 </section>
-	 <section class="projects">
-        <div class="site-container projects--container">
-			<div class="project--heading flex-col text-content wrapper sm">
-				<h2 class="project--title">Projects I've Made Over the Years</h2>
-				<p>
-				   Here are all main projects I've been working on for the past few years. 
-				   You can get all the projects I've done (Just not for now)
-				</p>
+						<div class="post-item--footer flex-row">
+							<p class="post--date">{post.frontmatter.date}</p>
+							<a class="link sm cta" href={post.url}> Read Post </a>
+						</div>
+					</div>
+				) ) }
 			</div>
-
-			<div class="col-3 projects--cards">
-				<Card classes="red">
-					<p>Card 1</p>
-				</Card>
-				<Card>
-					<p>Card 2</p>
-				</Card>
-				<Card>
-					<p>Card 3</p>
-				</Card>
-			</div>
-        </div>
-	 </section>
-
+		</div>
+	</section>
 </Layout>
 
 
+
 <!-- Maps Project Cards -->
-// <!-- {
-// 	projects.map( (project : any) => (
-// 			<article class="card article">
-// 				<p class="card--title">{project.frontmatter.title} </p>
-// 				<div class="tags--container flex-row">
-// 					<p class="tag">Tag 1</p>
-// 					<p class="tag">Tag 2</p>
-// 					<p class="tag">Tag 3</p>
-// 				</div>
-// 				<p class="card--description">{project.frontmatter.description}</p>
-// 			</article>
-// 		)
-// 	)
-// } -->
 

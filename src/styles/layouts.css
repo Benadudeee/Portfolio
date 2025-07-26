@@ -47,7 +47,7 @@
 
 .flex-row{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap:12px;
 }
 
@@ -91,7 +91,7 @@
 }
 
 
-@media screen and (min-width:590px){
+@media screen and (min-width:768px){
     .col-2, .col-4{
         grid-template-columns: repeat(2, 1fr);
     }

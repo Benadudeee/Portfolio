@@ -1,116 +1,149 @@
+/* Mobile First (Cause we do it the practical way) */
 .hero{
-    padding: 2em 0;
-}
-
-
-.hero--container{
-    background-color: var(--accent-clr);
-    padding: 1rem;
-    border-radius: 3rem;
-    position: relative;
-}
-
-.hero--hello{
-    /* width:136px;
-    height:136px; */
-    position:absolute;
-    padding: var(--spacing-md);
-
-    top:-40px;
-    right:0;
-
-    content: 'Hello World';
-    border: 8px solid var(--primary-clr);
-    background-color: #6987c9;
-    border-radius: 5rem;
-
-    display:flex;
-    justify-content: center;
-    align-items:center;
 
 }
 
-.hero--hello--icon{
-    padding: var(--spacing-md);
-    border: 8px solid var(--primary-clr);
-    transform:rotate(45deg);
-    border-radius: 5rem;
+.hero--content{
+    margin-bottom: var(--spacing-xl);
 }
 
-.icon--img{
-    width:64px;
-    transform: rotate(-60deg);
-}
-
-.hero--content--inner{
-    border: var(--primary-clr) 4px solid;
-    /* padding: var(--spacing-lg); */
-    border-radius: 2rem;
-    overflow: hidden;
-}
-
-.hero--url--container{
-    background-color:var(--primary-clr);
-    padding: var(--spacing-md) var(--spacing-xl);
-    color: var(--accent-clr);
-    width:100%;
-}
-
-.hero--url--container > p{
-    font-size: var(--font-size-text-xs);
-    font-family: var(--font-family-header)
-}
-
-.hero--info--container{
-    padding: var(--spacing-xl);
-    color: var(--primary-clr);
-}
-
-.hero--info{
-    margin: var(--spacing-xl) 0;
-    max-width: 556px;
-}
-
-.hero--info--image > img{
-    width:100%;
+.status{
+    margin-bottom: var(--spacing-md);
 }
 
 .hero--title{
-    /* width: 80%; */
+    margin-bottom: var(--spacing-sm);
 }
 
-.hero--techstack{
-    grid-column: 1 / -1;
+.hero--options{
+    margin-top: var(--spacing-xl);
+    gap: var(--spacing-sm);
 }
 
-.techstack--cards{
-    flex-wrap: wrap;
+.hero--links{
+    gap: var(--spacing-lg);
 }
 
-.about--header{
-    margin-bottom: 2.75em;
-}
-.about--info{
-    gap: 1em;
-    align-items: flex-start;
+.links--container{
+    gap: var(--spacing-lg);
 }
 
-.faq--content{
-    border: 2px solid var(--accent-clr);
-    /* border-radius-right: 20px; */
-    border-left:none;
-    border-right:none;
-
-    padding: 2em 0;
-
+/* Techstack  */
+.techstack{
+    justify-content: space-between;
 }
+
+.techstack--container{
+    gap: var(--spacing-md);
+}
+
+.techstack--title{
+    font-size:var(--font-size-header-sm);
+}
+
+/* Project Card */
+.project-card--inner{
+    padding: var(--spacing-2xl) var(--spacing-lg);
+    gap: var(--spacing-xxl);
+}
+.projects--header{
+    justify-content: space-between;
+    margin-bottom: var(--spacing-xl);
+}
+
+.project--title{
+    font-size:var(--font-size-header-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.project--description{
+    margin-bottom: var(--spacing-sm);
+}
+
+.project--options{
+    gap: var(--spacing-xl);
+}
+
+.separator{
+    height: 2px;
+    background-color: var(--primary-clr);
+}
+
+.about-me > div{
+    margin-bottom: var(--spacing-xl);
+}
+.about-me--header{
+    margin-bottom: var(--spacing-md);
+}
+
+.about-me--about{
+    margin-bottom: var(--spacing-xl);
+}
+
+.about-me-content--inner{
+    padding: var(--spacing-2xl) var(--spacing-lg);
+}
+
+.about-me--segments{
+    gap: var(--spacing-lg);
+}
+
+.segment--title{
+    font-size: 1.25rem;
+}
+
+.segment--items{
+    font-family: var(--font-family-header);
+    font-weight: 700;
+    color: var(--accent-clr);
+}
+
+/* Posts  */
+.posts--title{
+    margin-bottom: var(--spacing-lg);
+}
+
+.post-item--footer{
+    justify-content: space-between;
+}
+
 
 @media screen and (min-width:768px){
     .hero{
-        padding-top: 12em;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        padding-bottom:var(--spacing-lg);
     }
 
-    .hero--info--container{
-        gap: 8em;
+    .hero--links{
+        justify-self: center;
     }
+
+    .links--header{
+        margin-top: var(--spacing-lg);
+    }
+    .links--container{
+        margin-left: var(--spacing-xxl);
+    }
+
+    .techstack--title{
+        font-size: var(--font-size-header-md);
+    }
+
+    .techstack--container > img{
+        width: 36px;
+    }
+
+    .about-me{
+        flex-direction: row;
+        gap: var(--spacing-2xl);
+    }
+
+    .about-me--content{
+        max-width: 524px;
+    }
+}
+
+@media screen and (min-width:974px){
+
 }

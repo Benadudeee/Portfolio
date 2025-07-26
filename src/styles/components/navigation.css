@@ -1,8 +1,5 @@
 /* header.css: The css that covers all the styles of header navigation */
 /*  */
-.site-header{
-    padding: 1em;
-}
 
 .site-img{
     width: 75px;
@@ -10,18 +7,24 @@
 }
 
 .site-header{
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
     z-index: 100;
     background-color: var(--primary-clr);
-    padding: var(--spacing-lg);
+    /* padding: var(--spacing-lg); */
+    padding-inline: 1.25em;
     color:white
+}
+
+.site-icon{
+    width: 48px;
 }
 
 .site-nav{
     display:flex;
     justify-content: space-between;
     align-items:center;
+    padding: var(--spacing-lg) 0;
 }
 
 .site-brand{

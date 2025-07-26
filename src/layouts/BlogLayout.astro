@@ -1,45 +1,45 @@
 ---
 import '../styles/global.css';
+import Layout from './Layout.astro';
 
+
+const {frontmatter} = Astro.props;
+
+const thumbnail = frontmatter.image.url;
+const thumbnailAlt = frontmatter.image.alt;
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-	</head>
-	<body>
-        <section class="blog--wrapper">
-            <slot />
-        </section>
-	</body>
-</html>
+
+		
+<Layout>			
+	<article class="blog--wrapper">
+		<!-- Reminder to add alt tags -->
+		{(thumbnailAlt === undefined || thumbnailAlt === "") && <h2 class="warn">You need to add an alt tag</h2>}
+		
+		{(thumbnail !== undefined) && <img class="article--thumbnail" src={frontmatter.image.url} alt={frontmatter.image.alt}>}
+		
+		<h1 class="post--title">{frontmatter.title}</h1>
+		<slot />
+	</article>
+</Layout>
 
 <style>
-	:root{
-		--primary-clr: #171717;
-		--primary-clr-dark: #111111;
-		--primary-clr-light: #303030;
-
-		--accent-clr: #51e530;
-		--accent-clr-dark: #29b90a;
-
-		--secondary-clr: #626D58;
-
-		--white-clr: #eaeaea;
-	}
 
 	.blog--wrapper{
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
+		max-width: 748px;
+		margin-inline:auto;
 		min-height: 100vh;
-
-		max-width: 700px;
 	}
 
+	.article--thumbnail{
+		width:100%;
+	}
+
+	.post--title{
+		font-size: 4.5rem;
+	}
+
+	.warn{
+		color: red;
+	}
 </style>
