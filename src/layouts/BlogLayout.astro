@@ -4,8 +4,6 @@ import Layout from './Layout.astro';
 
 
 const {frontmatter} = Astro.props;
-
-const thumbnailAlt = frontmatter.image.alt;
 ---
 
 
@@ -13,8 +11,6 @@ const thumbnailAlt = frontmatter.image.alt;
 <Layout>			
 	<article class="blog--wrapper">
 		<!-- Reminder to add alt tags -->
-		{(thumbnailAlt === undefined || thumbnailAlt === "") && <h2 class="warn">You need to add an alt tag</h2>}
-		
 		<h1 class="post--title">{frontmatter.title}</h1>
 		<slot />
 	</article>
