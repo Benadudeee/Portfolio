@@ -5,7 +5,9 @@ import '../styles/components/navigation.css';
 <header class="site-header">
         <nav class="site-nav site-container">
         <div class="site-brand">
-            <img  class="site-icon" src="favicon.svg" alt="Favicon Image of my logo: A simple green circle with eyes">
+            <a href="/">
+                <img  class="site-icon" src="favicon.svg" alt="Favicon Image of my logo: A simple green circle with eyes">
+            </a>
         </div>
         <div class="site--hamburger">
             <div class="bar"></div>
@@ -17,7 +19,16 @@ import '../styles/components/navigation.css';
                 <a href="/" class="nav-link">Home</a>
             </li>
             <li class="nav-option">
+                <a href="/about" class="nav-link">About</a>
+            </li>
+            <li class="nav-option">
                 <a href="/services" class="nav-link">Services</a>
+            </li>
+            <li class="nav-option">
+                <a href="/blog" class="nav-link">Blog</a>
+            </li>
+            <li class="nav-option">
+                <a href="/contact" class="cta--btn btn sm">Get in Touch</a>
             </li>
         </ul>
 

@@ -107,20 +107,19 @@
     padding:var(--spacing-md);
     list-style-type:none;
     font-size: 1.5rem;
-    margin: 1em .5em;
     font-family: var(--header-font);
     overflow:hidden;
 }
 
-.nav-option > a{
+.nav-link{
     text-decoration: none;
     color: white;
     position:relative;
     font-weight: 500;
 }
 
-.nav-option:hover > a{
-    animation: top-hover .25s ease;
+.nav-link:hover{
+    text-decoration: underline;
 }
 
 
@@ -145,10 +144,8 @@
         margin:auto;
         background: none;
     }
-    .nav-option{
-        font-size: 1.125rem;
-        margin-left: 1.5em;
-        padding:0;
+    .nav-link{
+        font-size: 1rem;
     }
 
     .bar{

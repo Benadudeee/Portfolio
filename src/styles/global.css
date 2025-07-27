@@ -170,9 +170,14 @@ input[type="submit"]{
     color: var(--text-clr);
 }
 
+.btn.sm{
+    font-size:var(--font-size-text-sm);
+}
+
 .cta--btn{
     background-color: var(--accent-clr);
     color: var(--primary-clr);
+    text-decoration: none;
 }
 
 .btn.dark{

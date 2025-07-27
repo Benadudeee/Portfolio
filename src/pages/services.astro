@@ -1,132 +1,10 @@
 ---
-import Navigation from "../components/Navigation.astro"
-import Layout from "../layouts/Layout.astro"
-
+import Layout from "../layouts/Layout.astro";
+import "../styles/pages/services.css";
 ---
 
 <style>
-    .display-screen{
-		position: absolute;
-		top: 0;
-		left: 0;
 
-		width: 100%;
-		height: 100dvh;
-		
-		background-color: var(--primary-clr-light);
-		z-index: 1000;
-	}
-	
-	.hero{
-		display:flex;
-		flex-direction: column;
-		
-    	align-items: flex-start;
-		/* justify-content: center; */
-		
-	}
-	
-	.hero-info{
-		display:flex;
-		flex-direction: column;
-		gap: 1em;
-		
-		align-items: flex-start;
-		/* max-width: 400px; */
-	}
-	
-	.hero-cta{
-		margin: 1em 0;
-		
-	}
-	
-	.hero-widgets{
-		display:grid;
-		grid-template-columns: 1fr 1fr;
-		width: 100%;
-		
-		gap: 0.5em;
-	}
-	
-	.hero-widgets > div{
-		width:100%;
-		/* border: solid var(--primary-clr-light) 2px;
-		background-color: #202020;
-		border-radius: 20px; */
-	}
-	
-	/* .widget--container{
-		padding: 1em;
-		} */
-		
-		.subheader{
-			opacity: 0.83;
-		}
-		
-		.subtext{
-			font-size: .825rem;
-			opacity: 0.33;
-			
-			margin: .25em 0;
-		}
-		
-		.hero--panel{
-			width: 100%;
-			min-height: fit-content;
-			background-color: var(--accent-clr);
-			
-		}
-		
-		.info--wrapper{
-			max-width: 400px;
-			display: flex;
-			flex-direction: column;
-			gap: 1em;
-			padding: 1.5em;
-		}
-
-		@media screen and (min-width: 768px){
-			.hero--container{
-				width:100%;
-				min-height: 100dvh;
-				
-				display:flex;
-				flex-direction: row;
-			}
-			
-			.hero--info{
-				width: 50%;
-				display: flex;
-				align-items: center;
-				justify-content:center;
-			}
-
-			.hero--panel{
-				width: 50%;
-			}
-
-			.info--wrapper{
-				padding: 0;
-			}
-
-		/* .hero-widgets{
-			display:grid;
-			grid-template-columns: 1fr 1fr;
-			width: 100%;
-			
-			gap: 0.5em;
-			}
-			
-			.hero-widgets > div{
-				width:100%;
-				border: solid var(--primary-clr-light) 2px;
-				background-color: #202020;
-				border-radius: 20px;
-				} */
-				.widget-three{
-					grid-column: 1 / -1;
-				}
-	}
 </style>
 
 <Layout>
@@ -142,12 +20,12 @@ import Layout from "../layouts/Layout.astro"
 
 	</section>
 
-	<section class="problem">
+	<section class="problem site-container">
 		<h2>Most Websites Aren't Modern and May Have Security Risks</h1>
 		<p>You may have encountered</p>
 	</section>
 
-	<section class="services">
+	<section class="services site-container">
 		<h2>This is Where I Come In</h2>
 
 		<ul class="benefit">
@@ -159,7 +37,7 @@ import Layout from "../layouts/Layout.astro"
 		</ul>
 	</section>
 
-	<section class="how--to">
+	<section class="how--to site-container">
 		<h2>Here's how the process works</h2>
 
 		<ul>
