@@ -70,7 +70,7 @@ console.log(icons);
 		{/* Icons will be exported with their color, no need for color logic */}
 		<div class="techstack--item--container">
 			<div class="techstack--container flex-row">
-				{ icons.map( (icon: any) => <img src={icon.default.src} width={iconSize} height={iconSize} /> )  }
+				{ icons.map( (icon: any) => <img class="techstack--icon" src={icon.default.src} width={iconSize} height={iconSize} /> )  }
 			</div>
 			<a class="link techstack--link">See All</a>
 		</div>
@@ -83,7 +83,7 @@ console.log(icons);
 		</div>
 
 		{/*
-		 TODO: Add custom properties to config
+		 TODO: Add custom properties to config (gitub link, project link, etc)
 
 			plugin setup: https://docs.astro.build/en/guides/markdown-content/#markdown-plugins
 			frontmatter docs: https://docs.astro.build/en/guides/markdown-content/
@@ -97,8 +97,8 @@ console.log(icons);
 						<p class="project--description">{project.frontmatter.description}</p>
 
 						<div class="project--options flex-row">
-						    <a href="" class="link sm">See Github</a>
-						    <a href="" class="link sm cta">View Project</a>
+						    { /*<a href="" class="link sm">See Github</a> */}
+						    <a href={project.url} class="link sm cta">View Project</a>
 						</div>
 					</div>
 
