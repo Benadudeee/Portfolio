@@ -1,0 +1,3 @@
+.blogpost--list{
+    gap: var(--spacing-xl);
+}
