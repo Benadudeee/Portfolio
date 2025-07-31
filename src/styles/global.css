@@ -101,6 +101,10 @@ h1, h2, h3, h4, h5, h6{
     letter-spacing: -1px;
 }
 
+h1{
+    font-size: (--font-size-header-xl);
+}
+
 h2{
     font-size: var(--font-size-header-lg)
 }
@@ -249,9 +253,12 @@ input[type="submit"]{
 }
 
 /* Hero */
-.text-content{
-    gap: 1.5em;
-    align-items: flex-start;
+.text--block{
+    margin-bottom: var(--spacing-xl);
+
+    & * {
+        margin-bottom: var(--spacing-sm);
+    }
 }
 
 .card--column{
