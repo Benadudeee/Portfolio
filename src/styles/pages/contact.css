@@ -1,0 +1,63 @@
+
+.contact--links--container{
+    justify-self: center;
+}
+
+.hero--links{
+    gap: var(--spacing-lg);
+    position:relative;
+    width:fit-content;
+}
+
+.links--icon{
+    position:absolute;
+
+    top: 0;
+    left: 6.75em;
+    width: 48px;
+    height: 48px;
+
+    transform: rotate(19.95deg);
+}
+
+.links--header{
+    position: relative;
+}
+
+.link--item--container{
+    display:flex;
+    align-items:center;
+}
+
+.link--arrow{
+    width: 48px;
+}
+
+.contact--headline{
+    max-width: 524px;
+}
+
+.separator{
+    background: var(--secondary-clr);
+    width: 100%;
+    padding: var(--spacing-sm) 0;
+
+    & .separator--inner{
+        padding: var(--spacing-lg);
+        border-top: 4px solid var(--primary-clr);
+        border-bottom: 4px solid var(--primary-clr);
+    }
+}
+
+.form--content{
+    gap: var(--spacing-lg);
+
+    
+    & div > input, div > select, div > textarea {
+        margin-top: var(--spacing-lg);
+    }
+
+    & button {
+        justify-self: flex-start;
+    }
+}
