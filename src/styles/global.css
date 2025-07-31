@@ -151,13 +151,20 @@ ul{
     opacity: 1;
 }
 
-input[type="text"], textarea{
+input[type="text"], input[type="email"], select, textarea{
     width: 100%;
     padding: 1em;
     font-size: var(--font-size-text-sm);
     background-color: var(--primary-clr-light);
     color: var(--text-clr);
     border:none;
+
+    border-radius: 8px;
+}
+
+select { 
+  font-family: var(--font-family-header);
+  font-weight: 700;
 }
 
 input[type="submit"]{
