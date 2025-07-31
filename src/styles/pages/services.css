@@ -13,6 +13,7 @@
     }
 
     & .service--image{
+        margin-top: var(--spacing-3xl);
         width: 100%;
 
         & img{
@@ -54,12 +55,23 @@
         margin-inline:auto;
         max-width: 524px;
         text-align:center;
-        margin-bottom:var(--spacing-xl);
+        margin-bottom:var(--spacing-lg);
     }
 }
 
 .features--inner{
-    gap: var(--spacing-md);
+
+    & .features--content{
+        text-align:center;
+        max-width: 768px;
+        margin-inline:auto;
+        margin-bottom: var(--spacing-xxl);
+
+        & h1{
+            margin-bottom: var(--spacing-md);
+        }
+    }
+
 }
 
 .col.feature--col{
@@ -75,6 +87,9 @@
 }
 
 
+.pricing--header{
+    max-width: 524px;
+}
 .pricing{
     & .pricing--plan{
         /* margin-bottom:var(--spacing-xl); */
@@ -101,10 +116,10 @@
 
 }
 
-.card.pricing--card{
+.card.pricing--card, .card.feature, .card.step{
     height:100%;
     & .card--inner{
-        padding: var(--spacing-xxl) var(--spacing-lg);
+        padding: var(--spacing-xl) var(--spacing-md);
     }
 }
 
@@ -112,7 +127,6 @@
     min-height: 324px;
 
     & .card--inner{
-        padding: var(--spacing-xxl) var(--spacing-lg);
         min-height: 324px;
     }
 }
