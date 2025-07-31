@@ -6,28 +6,30 @@
     [ ] Get website projects under .astro file
     [ ] Get data from worked on websites
 
-[ ] About Me
-    [ ] 
+[X] About Me
+    [X] 
 
-[ ] Problem 
-    [ ] Finish Layout
-    [ ] Finish Content
+[X] Problem 
+    [X] Finish Layout
+    [X] Finish Content
 
-[ ] Offer
-    [ ] Finish Layout
-    [ ] Finish Content
+[X] Offer
+    [X] Finish Layout
+    [X] Finish Content
 
-[ ] Process
-    [ ] Create a step by step
-    [ ] 
+[X] Process
+    [X] Create a step by step
+    [X] 
 
-[ ] Pricing
-    [ ] Show offers
-
-[ ] Prefooter
-    [ ] Reoffer offers
+[X] Pricing
+    [X] Show offers
 
 
 === Contact Section ===
 [ ] Setup form through netlify
 [ ] Style form widgets
+
+=== Blog Posts ===
+[ ] Finish Basic Posts Page
+[ ] Finish Blog Post Styling
+[ ] 
