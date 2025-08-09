@@ -1,14 +1,20 @@
 .site-container, .site-footer{
-    --site-wrapper-size: 1224px;
+    --site-wrapper-size: 1124px;
+}
+
+h2{
+    font-size: var(--font-size-header-xl);
 }
 
 /* Trying out nested styles (see how it works) */
 .service--inner{
-    & h1{
+    & h1{ 
+        max-width: 924px;
         margin-bottom: var(--spacing-sm);
     }
 
     & p {
+        max-width: 596px;
         margin-bottom: var(--spacing-xl);
     }
 
@@ -21,6 +27,15 @@
             /* height: 524px; */
             border-radius: 24px;
             border: 2px solid var(--primary-clr-light);
+        }
+    }
+}
+
+.about{
+    .about--inner{
+
+        .text--block{
+            max-width: 440px;
         }
     }
 }

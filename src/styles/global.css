@@ -19,13 +19,14 @@
     --text-opacity-low: 0.67;
     
     --font-family-header: 'Space Grotesk' , sans-serif;
-    --font-family-text: sans-serif;
+    --font-family-text: 'Space Grotesk', sans-serif;
     --font-family-btn: 'Space Grotesk' , sans-serif;
 
     --text-line-height: 1.4;
-    --header-line-height: 1.1;
+    --header-line-height: 1;
     
     /* Font sizes large Screens */
+    --font-size-header-xxl: 3.75rem;
     --font-size-header-xl: 3rem;
     --font-size-header-lg: 2.5rem;
     --font-size-header-md: 2rem;
@@ -82,6 +83,7 @@ section, footer{
 
 p{
     font-size: var(--font-size-text-sm);
+    font-family: var(--font-family-text);
     opacity: var(--text-opacity-medium);
     font-weight: 500;
     line-height: var(--text-line-height);
@@ -174,8 +176,8 @@ input[type="submit"]{
     padding: .75em 1em;
 }
 
-.title{
-    font-size: var(--font-size-header-xl);
+.headline{
+    font-size: var(--font-size-header-lg);
 }
 
 .btn{
@@ -320,6 +322,10 @@ input[type="submit"]{
     }
 
     p, a{
-        font-size: var(--font-size-text);
+        font-size: 20px;
+    }
+
+    .headline{
+        font-size: var(--font-size-header-xxl);
     }
 }
