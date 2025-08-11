@@ -2,9 +2,6 @@
     --site-wrapper-size: 1124px;
 }
 
-h2{
-    font-size: var(--font-size-header-xl);
-}
 
 /* Trying out nested styles (see how it works) */
 .service--inner{
@@ -158,5 +155,9 @@ h2{
         & img{
             height: 524px;
         }
+    }
+
+    h2{
+        font-size:var(--font-size-header-xl);
     }
 }
