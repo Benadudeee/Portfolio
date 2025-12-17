@@ -7,7 +7,6 @@
     margin-bottom: var(--spacing-xl);
 }
 
-<<<<<<< HEAD
 
 .status{
     margin-bottom: var(--spacing-md);
@@ -27,13 +26,6 @@
 
 .hero--title{
     font-size: var(--font-size-header-md);
-=======
-.status{
-    margin-bottom: var(--spacing-md);
-}
-
-.hero--title{
->>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
     margin-bottom: var(--spacing-sm);
 }
 
@@ -72,26 +64,18 @@
 }
 /* Techstack  */
 .techstack{
-<<<<<<< HEAD
     gap: var(--spacing-lg);
-=======
-    justify-content: space-between;
->>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
 }
 
 .techstack--container{
     gap: var(--spacing-md);
-<<<<<<< HEAD
     flex-wrap:wrap;
-=======
->>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
 }
 
 .techstack--title{
     font-size:var(--font-size-header-sm);
 }
 
-<<<<<<< HEAD
 .projects--header{
     display:flex;
     flex-direction: column;
@@ -113,19 +97,12 @@
 
 div.separator:nth-child(6){
     display:none;
-=======
-/* Project Card */
-.project-card--inner{
-    padding: var(--spacing-2xl) var(--spacing-lg);
-    gap: var(--spacing-xxl);
->>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
 }
 .projects--header{
     justify-content: space-between;
     margin-bottom: var(--spacing-xl);
 }
 
-<<<<<<< HEAD
 .project--item{
     justify-content: space-between;
 }
@@ -134,23 +111,16 @@ div.separator:nth-child(6){
     width: 66%;
 }
 
-=======
->>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
 .project--title{
     font-size:var(--font-size-header-sm);
     margin-bottom: var(--spacing-sm);
 }
 
 .project--description{
-<<<<<<< HEAD
-=======
-    margin-bottom: var(--spacing-sm);
->>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
 }
 
 .project--options{
     gap: var(--spacing-xl);
-<<<<<<< HEAD
     align-items: flex-end;
 
     a{
@@ -158,14 +128,6 @@ div.separator:nth-child(6){
     }
 }
 
-=======
-}
-
-.separator{
-    height: 2px;
-    background-color: var(--primary-clr);
-}
->>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
 
 .about-me > div{
     margin-bottom: var(--spacing-xl);
@@ -213,13 +175,10 @@ div.separator:nth-child(6){
         padding-bottom:var(--spacing-lg);
     }
 
-<<<<<<< HEAD
     .hero--title{
         font-size: var(--font-size-header-xl);
     }
 
-=======
->>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
     .hero--links{
         justify-self: center;
     }
@@ -237,11 +196,7 @@ div.separator:nth-child(6){
     .links--container{
         margin-left: var(--spacing-xxl);
     }
-<<<<<<< HEAD
     
-=======
-
->>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
     .techstack--title{
         font-size: var(--font-size-header-md);
     }
@@ -250,13 +205,10 @@ div.separator:nth-child(6){
         width: 36px;
     }
 
-<<<<<<< HEAD
     .projects--header{
         flex-direction: row;
     }
 
-=======
->>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
     .about-me{
         flex-direction: row;
         gap: var(--spacing-2xl);
