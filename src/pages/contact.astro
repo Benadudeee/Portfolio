@@ -1,6 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
+<<<<<<< HEAD
 import LinkList from "../components/global/LinkList.astro";
+=======
+>>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
 import "../styles/pages/contact.css";
 
 // This will be shaped into it's own component later
@@ -15,7 +18,11 @@ const socialLinks = [
 <Layout>
     <section class="contact site-container">
         <div class="text--block contact--headline">
+<<<<<<< HEAD
             <h1>Let's Get In Touch!</h1>
+=======
+            <h1>Let's Keep In Touch!</h1>
+>>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
             <p>I'd love to get to know you. You can fill the conteact form below or you can contact me through the links. I always check so I'll make sure to get back to you.</p>
         </div>
     </section>
@@ -56,7 +63,13 @@ const socialLinks = [
                 <h1 class="links--header">Links</h1>
                 <img class="links--icon" src="/svg/techstack/postgres.svg"  />
                 {/* TODO: Add Responsive Arrow Svg Icon */} 
+<<<<<<< HEAD
                 <LinkList links={socialLinks} />
+=======
+                <ul class="links--container flex-col">
+                    {socialLinks.map((social : any) => <li class="link--item--container"> <a href={social.url} target="_blank" class="link">{social.text}</a> <img src="/svg/arrow.svg" class="link--arrow"/> </li>)}
+                </ul>
+>>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
             </div>
         </div>
     </section>

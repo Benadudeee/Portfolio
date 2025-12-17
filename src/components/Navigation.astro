@@ -1,0 +1,44 @@
+---
+import '../styles/components/navigation.css';
+---
+
+<header class="site-header">
+        <nav class="site-nav site-container">
+        <div class="site-brand">
+            <a href="/">
+                <img  class="site-icon" src="/favicon.svg" alt="Favicon Image of my logo: A simple green circle with eyes">
+            </a>
+        </div>
+        <div class="site--hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="nav-container">
+            <li class="nav-option">
+                <a href="/" class="nav-link">Home</a>
+            </li>
+            <li class="nav-option">
+                <a href="/blog" class="nav-link">Blog</a>
+            </li>
+            <li class="nav-option">
+                <a href="/services" class="nav-link">Services</a>
+            </li>
+            <li class="nav-option">
+                <a href="/contact" class="cta--btn btn sm">Get in Touch</a>
+            </li>
+        </ul>
+
+    </nav>
+</header>
+
+<script>
+    const hamburger = document.querySelector('.site--hamburger');
+    const navigation = document.querySelector('.nav-container');
+
+    hamburger?.addEventListener('click', () => {
+        navigation?.classList.toggle("active");
+        hamburger.classList.toggle("active");
+    });
+
+</script>

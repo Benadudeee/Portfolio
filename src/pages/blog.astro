@@ -1,12 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
+<<<<<<< HEAD
 import BlogCard from "../components/blog/BlogCard.astro";
+=======
+import BlogCard from "../components/BlogCard.astro";
+>>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
 import "../styles/pages/blog.css";
 
 const allPosts = Object.values(import.meta.glob("./blog/*.md", {eager: true}));
 ---
 
 <Layout>
+<<<<<<< HEAD
     <section class="blogpage">
         <div class="blogpage--header site-container">
             <h1>Blog Posts</h1>
@@ -32,4 +37,18 @@ const allPosts = Object.values(import.meta.glob("./blog/*.md", {eager: true}));
                 </div>
             </div>
         </div>
+=======
+    <section class="blog site-container">
+        <div class="blogpage--header">
+            <h1>All Posts Have Been Shown</h1>
+            <p>Here are some sample posts, hope y'all like these</p>
+        </div>
+    </section>
+
+    <section class="blogpost--list site-container">
+        <div class="col">
+            {allPosts.map( (post: any) => <BlogCard title={post.frontmatter.title} description={post.frontmatter.description} date={post.frontmatter.date} url={post.url} /> )}
+        </div>
+    </section>
+>>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
 </Layout>

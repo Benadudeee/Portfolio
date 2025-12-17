@@ -111,6 +111,7 @@
     overflow:hidden;
 }
 
+<<<<<<< HEAD
 .nav--cta{
     display: none;
 }
@@ -119,6 +120,8 @@
     display:block;
 }
 
+=======
+>>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
 .nav-link{
     text-decoration: none;
     color: white;
@@ -141,7 +144,10 @@
         align-items: center;
         justify-content: flex-end;
         background:var(--main-accent-clr);
+<<<<<<< HEAD
         width: fit-content;
+=======
+>>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
         height: fit-content;
     }
     .site-header{
@@ -149,15 +155,22 @@
     }
     
     .site-nav{
+<<<<<<< HEAD
         max-width: 1024px;
         margin:auto;
         background: none;
         padding-top: var(--spacing-xxl);
+=======
+        max-width: var(--site-wrapper-size);
+        margin:auto;
+        background: none;
+>>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
     }
     .nav-link{
         font-size: 1rem;
     }
 
+<<<<<<< HEAD
     .nav-option.nav--cta{
         display:none;
     }
@@ -166,6 +179,8 @@
         display:block;
     }
 
+=======
+>>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
     .bar{
         display:none;
     }

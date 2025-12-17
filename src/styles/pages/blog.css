@@ -1,5 +1,6 @@
 .blogpost--list{
     gap: var(--spacing-xl);
+<<<<<<< HEAD
 }
 
 .blogpage--header{
@@ -47,4 +48,6 @@
         justify-self:center;
 
     }
+=======
+>>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
 }

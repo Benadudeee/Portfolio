@@ -3,10 +3,15 @@
 // TODO: PUSH DESIGN ASSETS (LOGOS, SVG, COMPONENTS) INSIDE THE DAME PROJECT
 
 import Layout from '../layouts/Layout.astro';
+<<<<<<< HEAD
 import Accordion from "../components/global/Accordion.astro";
 import Card from "../components/global/Card.astro";
 
 import LinkList from '../components/global/LinkList.astro';
+=======
+import Accordion from "../components/Accordion.astro";
+import Card from "../components/Card.astro";
+>>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
 
 import "../styles/pages/index.css";
 
@@ -51,13 +56,22 @@ icons.forEach( (stack : any) => stack.default.width = iconSize);
 <Layout>
 	<section class="hero site-container col-2">
 		<div class="hero--content--container">
+<<<<<<< HEAD
 			<div class="status flex-row">
 				<div class="status--icon"></div> <p>Status: In College</p>
+=======
+			<div class="status">
+				<p>Status: In College</p>
+>>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
 			</div>
 	
 			<div class="hero--content">
 				<h1 class="hero--title">Hi, I'm a Full Stack Developer That Loves Building Cool Stuff</h1>
+<<<<<<< HEAD
 				<p>I'm a college web developer based in Worcester, MA. I like to create websites and web apps through python and javascript. I also have experience in Wordpress and Astro</p>
+=======
+				<p>I'm a college web developer based in Worcester, MA. I like to create web software for myself and others. </p>
+>>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
 
 				<div class="hero--options">
 					<a href="/contact"><button class="cta--btn btn">Get In Touch</button></a>
@@ -68,7 +82,13 @@ icons.forEach( (stack : any) => stack.default.width = iconSize);
 		<div class="hero--links flex-col">
 			<h1 class="links--header">Links</h1>
 			<img class="links--icon" src="/svg/techstack/postgres.svg" alt="The header image for my socials, a Postgres icon. Very cool looking elephant" />
+<<<<<<< HEAD
 			<LinkList links={socialLinks} />
+=======
+			<ul class="links--container flex-col">
+				{socialLinks.map((social : any) => <li class="link--item--container"> <a href={social.url} target="_blank" class="link">{social.text}</a> <img src="svg/arrow.svg" class="link--arrow" alt="Link Arrow Icon"/> </li>)}
+			</ul>
+>>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
 		</div>
 	</section>
 	<section class="techstack flex-row site-container">
@@ -77,8 +97,14 @@ icons.forEach( (stack : any) => stack.default.width = iconSize);
 		<div class="techstack--item--container">
 			<div class="techstack--container flex-row">
 				{ icons.map( (icon: any, i) => <img class="techstack--icon" src={icon.default.src} width={iconSize} height={iconSize} alt={`Logo for ${iconAltTags[i]}`}/> )  }
+<<<<<<< HEAD
 			</div>
 			<!-- <a class="link techstack--link">See All</a> -->
+=======
+		
+			</div>
+			<a class="link techstack--link">See All</a>
+>>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
 		</div>
 	</section>
 
@@ -86,6 +112,10 @@ icons.forEach( (stack : any) => stack.default.width = iconSize);
 		<div class="projects--header flex-row">
 			<div>
 				<h1>Projects</h1>
+<<<<<<< HEAD
+=======
+				<p>I haven't finished writing the content down</p>
+>>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
 			</div>
 			<button class="cta--btn btn"> See All Projects</button>
 		</div>
@@ -100,6 +130,7 @@ icons.forEach( (stack : any) => stack.default.width = iconSize);
 			<div class="project-card--inner flex-col">
 				{projects.map((project: any) => (
 
+<<<<<<< HEAD
 					<div class="project--item flex-row">
 						<div class="project--info">
 							<h3 class="project--title">{project.frontmatter.title}</h3> 
@@ -110,6 +141,15 @@ icons.forEach( (stack : any) => stack.default.width = iconSize);
 							{console.log(project.frontmatter.github)}
 						    { (project.frontmatter.github === "")? "" : <a target="_blank" href={project.frontmatter.github} class="link github">See Github</a> } 
 						    <a target="_blank" href={project.url} class="link cta">View Project</a>
+=======
+					<div class="project--item">
+						<h3 class="project--title">{project.frontmatter.title}</h3> 
+						<p class="project--description">{project.frontmatter.description}</p>
+
+						<div class="project--options flex-row">
+						    { /*<a href="" class="link sm">See Github</a> */}
+						    <a href={project.url} class="link sm cta">View Project</a>
+>>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
 						</div>
 					</div>
 
@@ -126,7 +166,11 @@ icons.forEach( (stack : any) => stack.default.width = iconSize);
 			<h1 class="about-me--header">About Me</h1>
 			<Card>
 					<div class="about-me-content--inner">
+<<<<<<< HEAD
 					<p class="about-me--about">Hi, I'm Benedict Antwi! I'm currently in my Junior year of Computer Science in WPI. My passion for software development started when I learned to make video games on a old battered computer.</p>
+=======
+					<p class="about-me--about">Hi, I'm Benedict Antwi! I'm currently in my Junior year of Computer Science in WPI. My passion for software development started when I learned to make video games in my old computer.</p>
+>>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
 	
 					<div class="about-me--segments flex-col">
 						<div class="segment">

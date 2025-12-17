@@ -1,0 +1,46 @@
+---
+import '../styles/components/footer.css'
+
+const socialLinks = [ 
+	{text: "Github", url: "https://github.com/Benadudeee"},
+	{text: "Handshake", url:"https://app.joinhandshake.com/profiles/mu3av9"},
+	{text: "Linkedin", url:"https://www.linkedin.com/in/benedict-antwi-607270278/"},
+	{text: "Instagram", url: "https://www.instagram.com/ben.woo.webdev/"}
+];
+---
+   
+   <footer class="site-footer">
+        <div class="footer--container">
+            <div class="footer--business-description">
+                <h2 class="title footer--sitetitle">Benedict</h2>
+            </div>
+
+            <div class="footer--links">
+                <div class="links--container">
+                    <h3 class="link--title">Socials</h3>
+                    <ul class="links">
+				        {socialLinks.map((social : any) => <li class="link--item"> <a class="link--url" href={social.url} target="_blank" class="link">{social.text}</a> </li>)}
+                    </ul>
+                </div>
+                <div class="links--container">
+                    <h3 class="link--title">Pages</h3>
+                    <ul class=" links">
+                        <li class="link--item">
+                            <a class="link--url" href="/">Home</a>
+                        </li>
+                        <li class="link--item">
+                            <a class="link--url" href="/service">Services</a>
+                        </li>
+                        <li class="link--item">
+                            <a class="link--url" href="/blog">Blog</a>
+                        </li>
+                        <li class="link--item">
+                            <a class="link--url" href="/contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </footer>
