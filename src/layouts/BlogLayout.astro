@@ -11,22 +11,14 @@ const {frontmatter} = Astro.props;
 <Layout>			
 	<article class="blogpost blog--wrapper">
 		<!-- Reminder to add alt tags -->
-<<<<<<< HEAD
 		<a href="/blog">Back to Blog</a>
 
 		<div class="blogpost--headline">
-=======
-		<div class="blogpost--headline">
-			<a href="/blog">Back to Blog</a>
->>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
 
 			<h1 class="blogpost--title">{frontmatter.title}</h1>
 			<p class="blogpost--description">{frontmatter.description}</p>
 			
-<<<<<<< HEAD
 			<p class="blogpost--date">{frontmatter.date}</p>
-=======
->>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
 		</div>
 
 		<div class="blogpost--content">
@@ -38,11 +30,7 @@ const {frontmatter} = Astro.props;
 <style>
 
 	.blog--wrapper{
-<<<<<<< HEAD
 		max-width: 796px;
-=======
-		max-width: 748px;
->>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
 		margin-inline:auto;
 		min-height: 100vh;
 	}
@@ -56,7 +44,6 @@ const {frontmatter} = Astro.props;
 	}
 
 	.blogpost--headline{
-<<<<<<< HEAD
 		margin-bottom: var(--spacing-3xl);
 		max-width: 600px;
 
@@ -74,23 +61,16 @@ const {frontmatter} = Astro.props;
 		}
 	}
 
-=======
-		margin-bottom: var(--spacing-xl);
-	}
->>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
 	.blogpost--content{
 		display:flex;
 		flex-direction:column;
 		gap: var(--spacing-2xl);
 
 		padding-bottom: var(--spacing-3xl);
-<<<<<<< HEAD
 
 		p{
 			font-weight: 400;
 		}
-=======
->>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
 	}
 
 	.warn{
