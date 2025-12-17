@@ -1,0 +1,79 @@
+---
+import '../styles/global.css';
+import Layout from './Layout.astro';
+
+
+const {frontmatter} = Astro.props;
+---
+
+
+		
+<Layout>			
+	<article class="blogpost blog--wrapper">
+		<!-- Reminder to add alt tags -->
+		<a href="/blog">Back to Blog</a>
+
+		<div class="blogpost--headline">
+
+			<h1 class="blogpost--title">{frontmatter.title}</h1>
+			<p class="blogpost--description">{frontmatter.description}</p>
+			
+			<p class="blogpost--date">{frontmatter.date}</p>
+		</div>
+
+		<div class="blogpost--content">
+			<slot />
+		</div>
+	</article>
+</Layout>
+
+<style>
+
+	.blog--wrapper{
+		max-width: 796px;
+		margin-inline:auto;
+		min-height: 100vh;
+	}
+
+	.article--thumbnail{
+		width:100%;
+	}
+
+	.blogpost{
+		padding: var(--spacing-3xl) 0;
+	}
+
+	.blogpost--headline{
+		margin-bottom: var(--spacing-3xl);
+		max-width: 600px;
+
+		.blogpost--title{
+			font-size: var(--font-size-header-xl);
+			margin-bottom: var(--spacing-sm);
+		}
+		.blogpost--description{
+			font-weight: 400;
+			margin-bottom: var(--spacing-md);
+		}
+		
+		.blogpost--date{
+			opacity: var(--text-opacity-low);
+		}
+	}
+
+	.blogpost--content{
+		display:flex;
+		flex-direction:column;
+		gap: var(--spacing-2xl);
+
+		padding-bottom: var(--spacing-3xl);
+
+		p{
+			font-weight: 400;
+		}
+	}
+
+	.warn{
+		color: red;
+	}
+</style>

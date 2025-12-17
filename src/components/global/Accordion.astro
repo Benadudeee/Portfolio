@@ -1,0 +1,81 @@
+---
+// Smaller elements with minimal CSS will have their own styles and scripts in their files
+// Bigger/More complex elements may have a separate CSS file (e.g. navigation), but most components wouldn't hit the
+// benchmark
+const {question, answer} = Astro.props;
+---
+<style>
+    .accordion{
+        margin-bottom: var(--spacing-xl);
+    }
+    .accordion--toggle{
+        padding: 1em;
+        background-color: var(--primary-clr-light);
+        border: 2px solid var(--accent-clr);
+        
+    }
+
+    .accordion--toggle{
+        display:flex;
+        justify-content: space-between;
+    }
+
+    .accordion--item{
+        font-size: var(--font-size-text-sm);
+        font-weight: 600;
+    }
+
+    .accordion--panel{
+        max-height: 0;
+        overflow:hidden;
+        background: var(--primary-clr-light);
+        
+        border-top: none;
+        transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) max-height 250ms;
+
+    }
+    
+    .accordion--panel--container{
+        padding: var(--spacing-md);
+    }
+
+    .accordion--panel-content{
+        font-size: var(--font-size-text-sm);
+    }
+
+    .accordion--panel.active{
+        max-height: 300px;
+        /* border: 2px solid var(--accent-clr); */
+    }
+</style>
+
+<div class="accordion--container">
+    <div class="accordion">
+        <div class="accordion--toggle">
+            <p class="accordion--item">{question}</p>
+            <img class="accordion--icon" src="svg/accordion-open.svg" alt="">
+        </div>
+
+        <div class="accordion--panel">
+            <div class="accordion--panel--container">
+                <p class="accordion--panel-content">{answer}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const toggles = document.querySelectorAll(".accordion--toggle");
+
+    toggles.forEach(toggle => 
+        toggle.addEventListener("click", () => {
+            //Change Img
+            const icon = toggle.children[1];
+            icon.attributes.src.value = (icon.attributes.src.value === 'svg/accordion-open.svg')? 'svg/accordion-close.svg' : 'svg/accordion-open.svg';
+
+            //Change panel
+            const panel = toggle.nextElementSibling;
+            panel?.classList.toggle("active");
+        })
+    )
+</script>

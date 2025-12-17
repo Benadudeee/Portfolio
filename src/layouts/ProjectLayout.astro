@@ -1,0 +1,42 @@
+---
+const {frontmatter} =  Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Site Portfolio</title>
+	</head>
+	<body>
+		<div class="project--wrapper">
+			<slot />
+		</div>
+	</body>
+</html>
+
+<style>
+    :root{
+        --primary-clr: #171717;
+        --primary-clr-dark: #111111;
+        --primary-clr-light: #303030;
+
+        --accent-clr: #51e530;
+        --accent-clr-dark: #29b90a;
+
+        --secondary-clr: #626D58;
+
+        --white-clr: #eaeaea;
+    }
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+<h1>{frontmatter.duration}</h1>

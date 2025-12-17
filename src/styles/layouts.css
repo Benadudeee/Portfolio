@@ -1,0 +1,113 @@
+/* layout.css: Utility classes for wrappers and basic grids */
+
+:root{
+    --site-wrapper-width-lg: 1024px;
+    --site-wrapper-width-md: 768px;
+    --site-wrapper-width-sm: 428px;
+
+    
+    --content-container-lg: 924px;
+    --content-container-md: 524px;
+    --content-container-sm: 424px;
+}
+/* Breakpoints  */
+
+.wrapper{
+    margin: 0 auto;
+    max-width: var(--site-wrapper-width-lg);
+}
+
+.wrapper.md{
+    max-width: var(--site-wrapper-width-md);
+}
+
+.wrapper.sm{
+    max-width: var(--site-wrapper-width-sm);
+}
+
+.content{
+    /* margin: 0 auto; */
+    max-width: var(--content-container-lg);
+
+}
+
+.content.md{
+    max-width: var(--content-container-md);
+}
+
+.content.sm{
+    max-width: var(--content-container-sm);
+}
+
+.flex-wrap{
+    display: flex;
+    flex-wrap:wrap;
+    gap: .25em;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    gap:12px;
+}
+
+.flex-col{
+    display:flex;
+    flex-direction: column;
+}
+
+.flex{
+    display: flex;
+}
+
+.col{
+    display: grid;
+    gap: 20px;
+}
+
+.col-2 > img{
+    width: 100%;
+}
+
+
+.col-3 > img{
+    width: 100%;
+}
+
+.col-4 > img{
+    width: 100%;
+}
+
+.col-2, .col-4{
+    display:grid;
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap:20px;
+}
+
+.col-3{
+    display: grid;
+    gap:20px;
+}
+
+
+@media screen and (min-width:768px){
+    .col-2, .col-4{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width:768px){
+    .col-3{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .col-4{
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .flex-row{
+       display:flex;
+        flex-direction: row;
+      }
+    
+}

@@ -1,0 +1,35 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BlogCard from "../components/blog/BlogCard.astro";
+import "../styles/pages/blog.css";
+
+const allPosts = Object.values(import.meta.glob("./blog/*.md", {eager: true}));
+---
+
+<Layout>
+    <section class="blogpage">
+        <div class="blogpage--header site-container">
+            <h1>Blog Posts</h1>
+        </div>
+
+        <div class="separator">
+            <div class="separator--inner separator-sm"></div>
+        </div>
+
+
+        <div class="blog--content site-container">
+            <div class="blogpost--list">
+                <div class="col">
+                    {allPosts.map( (post: any) => <BlogCard title={post.frontmatter.title} description={post.frontmatter.description} date={post.frontmatter.date} url={post.url} /> )}
+                </div>
+            </div>
+    
+            <div class="blog--categories">
+                <h2>Categories</h2>
+
+                <div class="category--list col">
+                    <a class="category--item" href="http://">Gaming <span class="dash">-</span> <span class="category--count">10</span></a>
+                </div>
+            </div>
+        </div>
+</Layout>

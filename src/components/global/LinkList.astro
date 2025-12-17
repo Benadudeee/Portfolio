@@ -1,0 +1,25 @@
+---
+const {links} = Astro.props;
+---
+
+<style>
+    .links--container{
+		margin-top: 1em;
+
+		display:flex;
+		flex-direction: column;
+	}
+
+    .links--container > li{
+        list-style-type: none;
+    }
+
+    .links--container > li > a{
+        color: var(--white-clr);
+        font-size: 1.25rem;
+    }
+</style>
+
+<ul class="links--container">
+    { links.map( (link: any) =>  <li class="link--item--container"> <a href={link.url} target="_blank" class="link">{link.text}</a> <img src="svg/arrow.svg" class="link--arrow" alt="Link Arrow Icon"/> </li>)}
+</ul>

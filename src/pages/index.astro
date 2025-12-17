@@ -1,0 +1,171 @@
+---
+// import "../styles/global.css";
+// TODO: PUSH DESIGN ASSETS (LOGOS, SVG, COMPONENTS) INSIDE THE DAME PROJECT
+
+import Layout from '../layouts/Layout.astro';
+import Accordion from "../components/global/Accordion.astro";
+import Card from "../components/global/Card.astro";
+
+import LinkList from '../components/global/LinkList.astro';
+
+import "../styles/pages/index.css";
+
+
+// TODO: Move links to it's own component 
+// TODO: Move icons to it's own component
+const socialLinks = [ 
+	{text: "Github", url: "https://github.com/Benadudeee"},
+	{text: "Handshake", url:"https://app.joinhandshake.com/profiles/mu3av9"},
+	{text: "Linkedin", url:"https://www.linkedin.com/in/benedict-antwi-607270278/"},
+	{text: "Instagram", url: "https://www.instagram.com/ben.woo.webdev/"}
+];
+
+
+// Maps the correct alt tag for the selected icon
+const iconAltTags = [
+	"astro",
+	"django",
+	"fastapi",
+	"javascript",
+	"postgres",
+	"python"
+]
+
+const projectMatches = import.meta.glob('../pages/projects/*.md', { eager: true });
+const projects = Object.values(projectMatches).slice(0, 4);
+
+
+const blogMatches = import.meta.glob("../pages/blog/*.md", { eager: true });
+const posts = Object.values(blogMatches).slice(0, 3);
+
+const iconsObj = import.meta.glob("../../public/svg/techstack/*.svg", {eager: true});
+const icons = Object.values(iconsObj);
+const iconSize = 24;
+// const blog_posts = Object.values(blog_matches).slice(0, 4);
+
+icons.forEach( (stack : any) => stack.default.width = iconSize);
+// console.log(icons[0].default.src);
+---
+
+
+<Layout>
+	<section class="hero site-container col-2">
+		<div class="hero--content--container">
+			<div class="status flex-row">
+				<div class="status--icon"></div> <p>Status: In College</p>
+			</div>
+	
+			<div class="hero--content">
+				<h1 class="hero--title">Hi, I'm a Full Stack Developer That Loves Building Cool Stuff</h1>
+				<p>I'm a college web developer based in Worcester, MA. I like to create websites and web apps through python and javascript. I also have experience in Wordpress and Astro</p>
+
+				<div class="hero--options">
+					<a href="/contact"><button class="cta--btn btn">Get In Touch</button></a>
+					<a href="/pdf/resume.pdf" target="_blank"> <button class="btn">See Resume</button></a>
+				</div>
+			</div>
+		</div>
+		<div class="hero--links flex-col">
+			<h1 class="links--header">Links</h1>
+			<img class="links--icon" src="/svg/techstack/postgres.svg" alt="The header image for my socials, a Postgres icon. Very cool looking elephant" />
+			<LinkList links={socialLinks} />
+		</div>
+	</section>
+	<section class="techstack flex-row site-container">
+		<h3 class="techstack--title">TechStack</h3>
+		{/* Icons will be exported with their color, no need for color logic */}
+		<div class="techstack--item--container">
+			<div class="techstack--container flex-row">
+				{ icons.map( (icon: any, i) => <img class="techstack--icon" src={icon.default.src} width={iconSize} height={iconSize} alt={`Logo for ${iconAltTags[i]}`}/> )  }
+			</div>
+			<!-- <a class="link techstack--link">See All</a> -->
+		</div>
+	</section>
+
+	<section class="projects site-container ">
+		<div class="projects--header flex-row">
+			<div>
+				<h1>Projects</h1>
+			</div>
+			<button class="cta--btn btn"> See All Projects</button>
+		</div>
+
+		{/*
+		 TODO: Add custom properties to config (gitub link, project link, etc)
+
+			plugin setup: https://docs.astro.build/en/guides/markdown-content/#markdown-plugins
+			frontmatter docs: https://docs.astro.build/en/guides/markdown-content/
+		 */}  
+		<Card classes="project-card--container" >
+			<div class="project-card--inner flex-col">
+				{projects.map((project: any) => (
+
+					<div class="project--item flex-row">
+						<div class="project--info">
+							<h3 class="project--title">{project.frontmatter.title}</h3> 
+							<p class="project--description">{project.frontmatter.description}</p>
+						</div>
+
+						<div class="project--options flex-row">
+							{console.log(project.frontmatter.github)}
+						    { (project.frontmatter.github === "")? "" : <a target="_blank" href={project.frontmatter.github} class="link github">See Github</a> } 
+						    <a target="_blank" href={project.url} class="link cta">View Project</a>
+						</div>
+					</div>
+
+					<div class="separator"></div>
+
+				))}
+			</div>
+			
+		</Card>
+	</section>
+
+	<section class="about-me flex-col site-container">
+		<div class="about-me--content">
+			<h1 class="about-me--header">About Me</h1>
+			<Card>
+					<div class="about-me-content--inner">
+					<p class="about-me--about">Hi, I'm Benedict Antwi! I'm currently in my Junior year of Computer Science in WPI. My passion for software development started when I learned to make video games on a old battered computer.</p>
+	
+					<div class="about-me--segments flex-col">
+						<div class="segment">
+							<h4 class="segment--title">Hobbies</h4>
+							<p class="segment--items">Drawing, Coding, Calisthenics, Wrestling</p>
+						</div>
+						<div class="segment">
+							<h4 class="segment--title">Games I Like</h4>
+							<p class="segment--items">Brawlhalla, Epic Battle Fantasy, Minecraft, Roblox, Deltarune</p>
+						</div>
+						<div class="segment">
+							<h4 class="segment--title">Shows I Love</h4>
+							<p class="segment--items">Bojack Horseman, Breaking Bad, Top Boy</p>
+						</div>
+					</div>
+				</div>
+			</Card>
+		</div>
+		
+		<div class="about-me--posts">
+			<h1 class="posts--title">Posts</h1>
+
+			<div class="posts--container">
+				{ posts.map( (post : any) => (
+					<div class="post-item sm">
+						<h3 class="post--title">{post.frontmatter.title}</h3>
+
+						<div class="post-item--footer flex-row">
+							<p class="post--date">{post.frontmatter.date}</p>
+							<a class="link sm cta" href={post.url}> Read Post </a>
+						</div>
+					</div>
+				) ) }
+			</div>
+		</div>
+	</section>
+</Layout>
+
+
+
+<!-- Maps Project Cards -->
+

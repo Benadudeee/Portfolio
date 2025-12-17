@@ -1,0 +1,63 @@
+---
+import Layout from "../layouts/Layout.astro";
+import LinkList from "../components/global/LinkList.astro";
+import "../styles/pages/contact.css";
+
+// This will be shaped into it's own component later
+const socialLinks = [ 
+	{text: "Github", url: "https://github.com/Benadudeee"},
+	{text: "Handshake", url:"https://app.joinhandshake.com/profiles/mu3av9"},
+	{text: "Linkedin", url:"https://www.linkedin.com/in/benedict-antwi-607270278/"},
+	{text: "Instagram", url: "https://www.instagram.com/ben.woo.webdev/"}
+];
+---
+
+<Layout>
+    <section class="contact site-container">
+        <div class="text--block contact--headline">
+            <h1>Let's Get In Touch!</h1>
+            <p>I'd love to get to know you. You can fill the conteact form below or you can contact me through the links. I always check so I'll make sure to get back to you.</p>
+        </div>
+    </section>
+
+    <div class="separator">
+        <div class="separator--inner"></div>
+    </div>
+
+    <section class="form col-2 site-container">
+        <form class="form--content col" name="contact" method="POST" data-netlify="true">
+            <div>
+                <label>Full Name</label>
+                <input type="text" name="fullname"></input>
+            </div>
+
+            <div>
+                <label>Email</label>
+                <input type="email" name="email">
+            </div>
+            
+            <div>
+                <label>Purpose </label>
+                <select name="role[]">
+                    <option value="passerby">Just wanna talk</option>
+                    <option value="client">I Want to Work With You</option>
+                </select>
+            </div>
+          
+            <div>
+                <label>Message</label>
+                <textarea name="message"></textarea>
+            </div>
+
+            <button class="btn cta--btn" type="submit">Submit</button>
+        </form>
+        <div class="contact--links--container">
+            <div class="hero--links contact">
+                <h1 class="links--header">Links</h1>
+                <img class="links--icon" src="/svg/techstack/postgres.svg"  />
+                {/* TODO: Add Responsive Arrow Svg Icon */} 
+                <LinkList links={socialLinks} />
+            </div>
+        </div>
+    </section>
+</Layout>

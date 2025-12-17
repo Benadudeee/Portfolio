@@ -1,0 +1,55 @@
+---
+import Card from "../global/Card.astro"
+
+const { title, description, date, url} = Astro.props
+---
+
+<style>
+    .blogcard--item{
+        background: var(--primary-clr-light);
+        padding: var(--spacing-xl);
+        border-radius: 24px;
+        
+        
+        a{
+            display:flex;
+            flex-direction:column;
+            text-decoration: none;
+        }
+    }
+
+    .blogcard--header{
+        margin-bottom: var(--spacing-xl);
+        
+        .blogcard--title {
+            margin-bottom: var(--spacing-md);
+            max-width: 440px;
+            font-size: var(--font-size-header-md);
+        }
+
+    }
+    
+    .blogcard--description{
+        font-size: var(--font-size-text-sm);
+        max-width: 440px;
+    }
+
+    .blogcard--date{
+        font-size: var(--font-size-text);
+        opacity: var(--text-opacity-low);
+
+        display:flex;
+        justify-content: flex-end;
+    }
+
+</style>
+<div class="blogcard--item">
+    <a href={url}>
+        <div class="blogcard--header">
+            <h3 class="blogcard--title">{title}</h3>
+            <p class="blogcard--description">{description}</p>
+        </div>
+    
+        <p class="blogcard--date">{date}</p>
+     </a>
+</div>
