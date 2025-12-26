@@ -210,7 +210,6 @@ div.separator:nth-child(8){
     }
 
     .about-me{
-        flex-direction: row;
         gap: var(--spacing-2xl);
     }
 
