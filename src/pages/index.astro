@@ -60,8 +60,8 @@ icons.forEach( (stack : any) => stack.default.width = iconSize);
 				<p>I'm a college web developer based in Worcester, MA. I like to create websites and web apps through python and javascript. I also have experience in Wordpress and Astro</p>
 
 				<div class="hero--options">
-					<a href="/contact"><button class="cta--btn btn">Get In Touch</button></a>
-					<a href="/pdf/resume.pdf" target="_blank"> <button class="btn">See Resume</button></a>
+					<a href="/pdf/resume.pdf" target="_blank"> <button class="cta--btn btn">See Resume</button></a>
+					<a href="/contact"><button class="btn">Contact Me</button></a>
 				</div>
 			</div>
 		</div>
@@ -122,6 +122,24 @@ icons.forEach( (stack : any) => stack.default.width = iconSize);
 	</section>
 
 	<section class="about-me flex-col site-container">
+
+		<!-- Might use this later, but scrapping into a comment for now
+		<div class="about-me--posts">
+			<h1 class="posts--title">Posts</h1>
+
+			<div class="posts--container">
+				{ posts.map( (post : any) => (
+					<div class="post-item sm">
+						<h3 class="post--title">{post.frontmatter.title}</h3>
+
+						<div class="post-item--footer flex-row">
+							<p class="post--date">{post.frontmatter.date}</p>
+							<a class="link sm cta" href={post.url}> Read Post </a>
+						</div>
+					</div>
+				) ) }
+			</div>
+		</div> -->
 		<div class="about-me--content">
 			<h1 class="about-me--header">About Me</h1>
 			<Card>
@@ -144,23 +162,6 @@ icons.forEach( (stack : any) => stack.default.width = iconSize);
 					</div>
 				</div>
 			</Card>
-		</div>
-		
-		<div class="about-me--posts">
-			<h1 class="posts--title">Posts</h1>
-
-			<div class="posts--container">
-				{ posts.map( (post : any) => (
-					<div class="post-item sm">
-						<h3 class="post--title">{post.frontmatter.title}</h3>
-
-						<div class="post-item--footer flex-row">
-							<p class="post--date">{post.frontmatter.date}</p>
-							<a class="link sm cta" href={post.url}> Read Post </a>
-						</div>
-					</div>
-				) ) }
-			</div>
 		</div>
 	</section>
 </Layout>
