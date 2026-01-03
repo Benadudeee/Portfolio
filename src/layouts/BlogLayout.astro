@@ -5,28 +5,6 @@ import Layout from './Layout.astro';
 
 const {frontmatter} = Astro.props;
 ---
-
-
-		
-<Layout>			
-	<article class="blogpost blog--wrapper">
-		<!-- Reminder to add alt tags -->
-		<a href="/blog">Back to Blog</a>
-
-		<div class="blogpost--headline">
-
-			<h1 class="blogpost--title">{frontmatter.title}</h1>
-			<p class="blogpost--description">{frontmatter.description}</p>
-			
-			<p class="blogpost--date">{frontmatter.date}</p>
-		</div>
-
-		<div class="blogpost--content">
-			<slot />
-		</div>
-	</article>
-</Layout>
-
 <style>
 
 	.blog--wrapper{
@@ -73,7 +51,28 @@ const {frontmatter} = Astro.props;
 		}
 	}
 
-	.warn{
+	/* .warn{
 		color: red;
-	}
+	} */
 </style>
+
+
+		
+<Layout title={frontmatter.title}>			
+	<article class="blogpost blog--wrapper">
+		<!-- Reminder to add alt tags -->
+		<a href="/blog">Back to Blog</a>
+
+		<div class="blogpost--headline">
+
+			<h1 class="blogpost--title">{frontmatter.title}</h1>
+			<p class="blogpost--description">{frontmatter.description}</p>
+			
+			<p class="blogpost--date">{frontmatter.date}</p>
+		</div>
+
+		<div class="blogpost--content">
+			<slot />
+		</div>
+	</article>
+</Layout>
