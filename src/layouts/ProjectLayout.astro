@@ -1,25 +1,15 @@
 ---
+import Layout from "../layouts/Layout.astro"
+import Tag from "../components/projects/Tag.astro";
+import TagList from "../components/projects/TagList.astro";
+
 const {frontmatter} =  Astro.props;
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Site Portfolio</title>
-	</head>
-	<body>
-		<div class="project--wrapper">
-			<slot />
-		</div>
-	</body>
-</html>
 
 <style>
-    :root{
+    /* DON'T REMOVE THIS!!!! MIGHT (MOST LIKELY) USE THIS PALATTE LATER!!
+	:root{
         --primary-clr: #171717;
         --primary-clr-dark: #111111;
         --primary-clr-light: #303030;
@@ -30,7 +20,77 @@ const {frontmatter} =  Astro.props;
         --secondary-clr: #626D58;
 
         --white-clr: #eaeaea;
-    }
+    } */
+
+	.blog--wrapper{
+		margin-inline:auto;
+		min-height: 100vh;
+	}
+
+	.article--thumbnail{
+		width:100%;
+	}
+
+	.project{
+		padding: var(--spacing-3xl) 0;
+		font-size: 1.125rem;
+	}
+
+	.project--header{
+		margin-bottom: var(--spacing-3xl);
+	}
+	
+	.project--headline{
+		max-width: var(--site-wrapper-width-sm);
+		margin-bottom: var(--spacing-xxl);
+		
+
+		.project--title{
+			font-size: var(--font-size-header-xl);
+			margin-bottom: var(--spacing-sm);
+		}
+		.project--description{
+			font-weight: 400;
+			margin-bottom: var(--spacing-md);
+		}
+		
+		.project--date{
+			font-weight: 700;
+			opacity: var(--text-opacity-low);
+		}
+	}
+
+	.project--content{
+		display:flex;
+		flex-direction:column;
+		gap: var(--spacing-2xl);
+
+		padding-bottom: var(--spacing-3xl);
+
+		p{
+			font-weight: 400;
+		}
+	}
+
+	.project--footer{
+		width: 100%;
+		justify-content: space-between;
+		align-items: flex-end;
+		margin-bottom: var(--spacing-3xl);
+
+		.project-options{
+			gap: var(--spacing-md);
+		}
+	}
+
+	.article--thumbnail{
+		border-radius: 1.25rem;
+	}
+
+	.link--project{
+		color: var(--accent-clr);
+	}
+
 	html,
 	body {
 		margin: 0;
@@ -39,4 +99,45 @@ const {frontmatter} =  Astro.props;
 	}
 </style>
 
-<h1>{frontmatter.duration}</h1>
+<Layout title={`Project: ${frontmatter.title}`}>
+	<article class="project blog--wrapper site-container">
+		<!-- Reminder to add alt tags -->
+
+		{console.log(frontmatter)}
+		<div class="project--header">
+			<div class="project--headline">
+				<h1 class="project--title">{frontmatter.title}</h1>
+				<p class="project--description">{frontmatter.description}</p>
+				
+				<p class="project--date">{frontmatter.date}</p>
+			</div>
+
+			<div class="project--footer flex-row">
+				<TagList tags={frontmatter.tags}/>
+				
+				<div class="project-options">
+					<ul class="project-options--inner flex-row">
+						{frontmatter.github != null && frontmatter.github !== '' && (
+							<li class="option-item">
+								<a href={frontmatter.github} target="_blank" rel="noopener noreferrer" class="link--demo">See Github</a>
+							</li>
+						)}
+						{frontmatter.liveLink != null && frontmatter.liveLink !== '' && (
+							<li class="option-item">
+								<a href={frontmatter.liveLink} target="_blank" rel="noopener noreferrer" class="link--project">See Project</a>
+							</li>
+						)}
+					</ul>
+				</div>
+			</div>
+			<div class="project--image">
+				<img class="article--thumbnail" src={frontmatter.image} alt={frontmatter.title} />
+			</div>
+		</div>
+
+
+		<div class="project--content">
+			<slot />
+		</div>
+	</article>
+</Layout>
