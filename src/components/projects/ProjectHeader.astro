@@ -1,0 +1,43 @@
+---
+
+const {title, description, date, backlink=false} = Astro.props;
+
+---
+<style>
+    .project--header{
+        margin-bottom: var(--spacing-3xl);
+    }
+    
+    .project--headline{
+        max-width: 600px;
+        margin-bottom: var(--spacing-xxl);
+        
+        .project--backlink{
+            margin-bottom: var(--spacing-md)
+        }
+
+        .project--title{
+            font-size: var(--font-size-header-xl);
+            margin-bottom: var(--spacing-xs);
+        }
+        .project--description{
+            font-weight: 400;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .project--date{
+            font-weight: 700;
+            opacity: var(--text-opacity-low);
+        }
+    }
+</style>
+
+<div class="project--header">
+    <div class="project--headline">
+        <div class="project--backlink">
+            { backlink ? <a href="/projects" class="link cta">&larr; Back to Projects</a> : "" }
+        </div>
+        <h1 class="project--title">{title}</h1>
+        <p class="project--description">{description}</p>
+        { date ? <p class="project--date">{date}</p> : "" }
+    </div>

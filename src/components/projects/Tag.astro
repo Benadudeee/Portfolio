@@ -1,0 +1,25 @@
+---
+
+const { tag } = Astro.props;
+
+---
+
+<style>
+    .tag{
+		padding: var(--spacing-md) var(--spacing-lg);
+		background-color: var(--primary-clr-light);
+		border-radius: 2rem;
+
+		font-size: 1.125rem;
+		font-family: var(--font-family-text);
+		font-weight: 700;
+	}
+    .tag-link{
+        text-decoration: none;
+    }
+</style>
+
+
+<div class="tag">
+    <a class="tag-link" href={ (`/projects/tags/${tag}`)}>{ tag }</a>
+</div>

@@ -1,0 +1,102 @@
+---
+import Card from "../../components/global/Card.astro"
+
+// Content shown in card will be processed by the frontmatter of the post 
+
+const { post } = Astro.props
+
+---
+
+<style>
+    /* Project Card Styling */
+
+.project-card--footer{
+    padding: var(--spacing-lg) var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+
+}
+.project-title{
+    font-size: var(--font-size-header-sm);
+}
+
+.project-card--image{
+
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.info{
+
+}
+
+.info--cta{
+    display: flex;
+    align-items: center;
+    width: 66%;
+    justify-content: flex-end;
+
+}
+.link{
+    color: var(--white-clr);
+    font-size: 1rem;
+}
+
+.link--arrow{
+    width: 48px;
+    height: 48px;
+}
+
+@media screen and (min-width: 796px) {
+    
+    .project-card--footer{
+        .info{
+        }
+    }
+    .project-card--image{
+        min-height:200px;
+    }
+
+    .link{
+        font-size: 1.125rem;
+    }
+
+    .info--cta{
+        width: fit-content;
+    }
+}
+</style>
+
+{/* Code goes here below */}
+
+<Card classes="project">
+    <div class="project-card">
+            <div class="project-card--inner">
+                <div class="project-card--image">
+                    <img src={ post.frontmatter.image } alt={post.frontmatter.title}>
+                </div>
+
+
+                <div class="project-card--footer">
+                    <div class="info--content">
+                        <h3 class="project-title"> {post.frontmatter.title}</h3>
+                        <p>{post.frontmatter.date}<p>
+                    </div>
+                </div>
+            </div>
+                    
+                    <div class="info--cta">
+                        <a href={post.url} target="_blank" class="link">See Project</a> <img src="/public/svg/arrow.svg" class="link--arrow" alt="Link Arrow Icon"/>
+                    </div>
+                </div>
+            </div>
+
+            
+        </div>
+    </div>
+</Card>

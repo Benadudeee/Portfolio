@@ -1,0 +1,14 @@
+---
+
+import Tag from "./Tag.astro"
+const {tags} = Astro.props
+
+---
+<style>
+    .project--tags{
+		gap: var(--spacing-md);
+	}
+</style>
+<div class="project--tags flex-row">
+    {tags.map( (tag: any) =>   <Tag tag={tag} /> )}
+</div>
