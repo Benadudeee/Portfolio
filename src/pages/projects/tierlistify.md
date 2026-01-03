@@ -4,7 +4,8 @@ date: "2024-11-12"
 tags: ["Django", "CSS", "HTMX", "Javascript"]
 description: "A webapp where you can create and edit tierlists across multiple categories"
 layout: "../../layouts/ProjectLayout.astro"
-image: "../../../public/images/thumbnails/Tierlist_Thumbnail.png"
+image: "/images/thumbnails/Tierlist_Thumbnail.png"
+# image: "../../../public/images/thumbnails/Tierlist_Thumbnail.png"
 github: "https://github.com/Benadudeee/tierlistify"
 ---
 

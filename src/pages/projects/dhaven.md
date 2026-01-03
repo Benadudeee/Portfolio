@@ -3,7 +3,8 @@ title: "Dhaven"
 date: "2024-11-12"
 description: "A particle simulation I made using the html5 canvas"
 layout: "../../layouts/ProjectLayout.astro"
-image: "../../../public/images/thumbnails/Dhaven_Thumbnail.png"
+image: "/images/thumbnails/Dhaven_Thumbnail.png"
+# image: "../../../public/images/thumbnails/Dhaven_Thumbnail.png"
 tags: ["Javascript", "Canvas"]
 liveLink: "https://dhaven.netlify.app/"
 ---
