@@ -1,0 +1,27 @@
+.projects--header{
+
+    margin-bottom: var(--spacing-xl);
+}
+
+.site-container{
+    max-width: var(--site-wrapper-width-lg);
+}
+
+.project--header{
+	margin-bottom: var(--spacing-xl) !important;
+}
+
+.project--tags{
+    margin-bottom: var(--spacing-3xl);
+}
+
+@media screen and (min-width: 796px) {
+    .projects--title{
+        font-size: var(--font-size-header-xl);
+    }
+    .projects--header{
+        max-width: var(--site-wrapper-width-lg);
+        margin-bottom: var(--spacing-xxl)
+    }
+
+}

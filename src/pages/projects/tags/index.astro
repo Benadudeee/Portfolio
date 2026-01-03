@@ -1,0 +1,21 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import TagList from "../../../components/projects/TagList.astro";
+import ProjectHeader from "../../../components/projects/ProjectHeader.astro";
+
+const allProjects = Object.values(import.meta.glob("../../projects/*.md", {eager: true}));
+const tags = [...new Set(allProjects.map((post: any) => post.frontmatter.tags).flat())];
+---
+
+<Layout title="Projects">
+    <section class="site-container">
+
+        <ProjectHeader 
+            title="All Tags"
+            backlink={true}
+        />
+
+        <TagList tags={tags} />
+
+    </section>
+</Layout>

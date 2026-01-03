@@ -37,21 +37,6 @@
     max-width: 524px;
 }
 
-<<<<<<< HEAD
-=======
-.separator{
-    background: var(--secondary-clr);
-    width: 100%;
-    padding: var(--spacing-sm) 0;
-
-    & .separator--inner{
-        padding: var(--spacing-lg);
-        border-top: 4px solid var(--primary-clr);
-        border-bottom: 4px solid var(--primary-clr);
-    }
-}
-
->>>>>>> 8b06a16b3308ee699ff77232b14f54e43a22517e
 .form--content{
     gap: var(--spacing-lg);
 

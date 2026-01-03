@@ -1,10 +1,37 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ProjectCard from "../components/projects/ProjectCard.astro";
+import TagList from "../components/projects/TagList.astro";
+
+import "../styles/pages/projects.css";
+import ProjectHeader from "../components/projects/ProjectHeader.astro";
+
+const allProjects = Object.values(import.meta.glob("./projects/*.md", {eager: true}));
+const tags = [...new Set(allProjects.map((post: any) => post.frontmatter.tags).flat())];
+
 ---
 
-<Layout>
+<Layout title="Projects">
     <section class="site-container">
-        <h1>W.I.P</h1>
-        <p>This feature of the site is a Work in Progress. Sorry for the trouble</p>
+
+        <ProjectHeader 
+            title="Development Projects"
+            description="Here's all of my latest projects. Click on one of them to get more details (More will be posted later)"
+        />
+
+         <div class="project--tags">
+                <TagList tags={tags} />
+
+                <!-- <div> If the tags get bigger
+                    <a href="projects/tags">See All Tags</a>
+                </div> -->
+        </div>
+        
+
+
+        <div class="col-2 projects--list">
+            { /* For loop for the most recent projects */}
+            {allProjects.map( (project: any) => ( <ProjectCard post={project} /> ) )}
+        </div>
     </section>
 </Layout>

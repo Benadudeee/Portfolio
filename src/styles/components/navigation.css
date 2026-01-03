@@ -111,6 +111,11 @@
     overflow:hidden;
 }
 
+
+.nav-cta--container{
+    display:none;
+}
+
 .nav--cta{
     display: none;
 }
@@ -154,18 +159,27 @@
         background: none;
         padding-top: var(--spacing-xxl);
     }
-    .nav-link{
-        font-size: 1rem;
-    }
 
-    .nav-option.nav--cta{
-        display:none;
-    }
-
-    .nav--cta{
+    .nav-cta--container{
         display:block;
     }
 
+    .nav-cta--container-mb{
+        display:none;
+    }
+
+    .nav-link{
+        font-size: 1rem;
+    }
+    
+    .nav-option.nav--cta{
+        display:none;
+    }
+    
+    .nav--cta{
+        display:block;
+    }
+    
     .bar{
         display:none;
     }

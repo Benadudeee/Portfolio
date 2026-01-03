@@ -48,7 +48,7 @@ icons.forEach( (stack : any) => stack.default.width = iconSize);
 ---
 
 
-<Layout>
+<Layout title="Benedev | Fullstack Developer">
 	<section class="hero site-container col-2">
 		<div class="hero--content--container">
 			<div class="status flex-row">
@@ -108,8 +108,9 @@ icons.forEach( (stack : any) => stack.default.width = iconSize);
 
 						<div class="project--options flex-row">
 							{console.log(project.frontmatter.github)}
-						    { (project.frontmatter.github === "")? "" : <a target="_blank" href={project.frontmatter.github} class="link github">See Github</a> } 
-						    <a target="_blank" href={project.url} class="link cta">View Project</a>
+						    { (project.frontmatter.github !== undefined && project.frontmatter.github !== null)? <a target="_blank" href={project.frontmatter.github} class="link github">See Github</a> : "" } 
+						    { (project.frontmatter.liveLink !== undefined && project.frontmatter.liveLink !== null)? <a target="_blank" href={project.url} class="link cta">View Project</a> : "" } 
+						    
 						</div>
 					</div>
 

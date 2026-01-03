@@ -1,0 +1,33 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import ProjectCard from '../../../components/projects/ProjectCard.astro';
+import ProjectHeader from '../../../components/projects/ProjectHeader.astro';
+
+
+export async function getStaticPaths() {
+  const posts = Object.values(import.meta.glob("../../projects/*.md", {eager: true}));
+  const tags = [...new Set(posts.map((post: any) => post.frontmatter.tags).flat())];
+
+  return tags.map( (tag: any) => ( { params: { tag: tag }, props: {posts: posts} } ) )
+}
+
+const { tag } = Astro.params;
+const { posts } = Astro.props;
+
+const filteredPosts = posts.filter( (post: any) => post.frontmatter.tags?.includes(tag) );
+---
+<Layout pageTitle={tag}>
+
+  <section class="site-container">
+
+    <ProjectHeader
+      title={tag}
+      description={`Posts tagged with ${tag}`}
+      backlink={true}
+    />
+
+    <div class="col-2">
+      {filteredPosts.map( (post: any) => ( <ProjectCard post={ post } />))}
+    </div>
+  </section>
+</Layout>
