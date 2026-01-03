@@ -43,13 +43,16 @@ const { title, description, date, url} = Astro.props
     }
 
 </style>
-<div class="blogcard--item">
-    <a href={url}>
-        <div class="blogcard--header">
-            <h3 class="blogcard--title">{title}</h3>
-            <p class="blogcard--description">{description}</p>
-        </div>
-    
-        <p class="blogcard--date">{date}</p>
-     </a>
-</div>
+
+<Card classes="blog"> 
+    <div class="blogcard--item">
+        <a href={url}>
+            <div class="blogcard--header">
+                <h3 class="blogcard--title">{title}</h3>
+                <p class="blogcard--description">{description}</p>
+            </div>
+        
+            <p class="blogcard--date">{date}</p>
+         </a>
+    </div>
+</Card>

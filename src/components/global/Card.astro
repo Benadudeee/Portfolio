@@ -6,7 +6,7 @@ const {classes} = Astro.props;
     .card{
         --card-title-size: 1.5em;
         --card-padding: .5em;
-        --card-padding--inner: 1em;
+        --card-padding--inner: .5em;
 
         --card-text-size: 1em;
         --card-border-radius: 1.5em;
@@ -33,7 +33,7 @@ const {classes} = Astro.props;
     }
 
     .card--inner--content{
-        padding: var(--card-padding);
+        padding: var(--card-padding--inner);
         height: 100%;
     }
 
@@ -45,29 +45,9 @@ const {classes} = Astro.props;
 
 
 
-    /* Extra Classes / Variants */
-    .card--project{
-        height: 100%;
+    .project.card{
+        --card-padding--inner: 0;
     }
-
-
-    .card--techstack{
-        height:fit-content;
-        width:fit-content;
-
-        padding: .25em;
-        border-radius: 1em;
-    }
-
-    .card--techstack > .card--inner{
-        padding: .25em;
-        border-radius: .75em;
-    }
-
-    .card--inner > .card--techstack--icon{
-        width: 80px;
-    }  
-
 </style>
 
 <article class=`card ${classes}`>

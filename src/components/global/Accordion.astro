@@ -71,6 +71,8 @@ const {question, answer} = Astro.props;
         toggle.addEventListener("click", () => {
             //Change Img
             const icon = toggle.children[1];
+            // const currentSrc = icon.getAttribute('src');
+            // icon.setAttribute('src', currentSrc === 'svg/accordion-open.svg' ? 'svg/accordion-close.svg' : 'svg/accordion-open.svg');
             icon.attributes.src.value = (icon.attributes.src.value === 'svg/accordion-open.svg')? 'svg/accordion-close.svg' : 'svg/accordion-open.svg';
 
             //Change panel
