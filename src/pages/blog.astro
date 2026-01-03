@@ -6,7 +6,7 @@ import "../styles/pages/blog.css";
 const allPosts = Object.values(import.meta.glob("./blog/*.md", {eager: true}));
 ---
 
-<Layout>
+<Layout title="Blog Posts">
     <section class="blogpage">
         <div class="blogpage--header site-container">
             <h1>Blog Posts</h1>
@@ -20,16 +20,17 @@ const allPosts = Object.values(import.meta.glob("./blog/*.md", {eager: true}));
         <div class="blog--content site-container">
             <div class="blogpost--list">
                 <div class="col">
+                    { allPosts.length == 0 && <p>There's no posts (Not yet at least)</p> }
                     {allPosts.map( (post: any) => <BlogCard title={post.frontmatter.title} description={post.frontmatter.description} date={post.frontmatter.date} url={post.url} /> )}
                 </div>
             </div>
     
-            <div class="blog--categories">
+            <!-- <div class="blog--categories">
                 <h2>Categories</h2>
 
                 <div class="category--list col">
                     <a class="category--item" href="http://">Gaming <span class="dash">-</span> <span class="category--count">10</span></a>
                 </div>
-            </div>
+            </div> -->
         </div>
 </Layout>
