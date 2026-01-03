@@ -4,6 +4,8 @@ import Footer from "../components/global/Footer.astro"
 
 import "../styles/global.css"
 import "../styles/layouts.css"
+
+const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -13,7 +15,7 @@ import "../styles/layouts.css"
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Site Portfolio</title>
+		<title> { title } </title>
 	</head>
 	<body>
 		<Navigation />
