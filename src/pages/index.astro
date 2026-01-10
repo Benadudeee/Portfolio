@@ -3,7 +3,6 @@
 // TODO: PUSH DESIGN ASSETS (LOGOS, SVG, COMPONENTS) INSIDE THE DAME PROJECT
 
 import Layout from '../layouts/Layout.astro';
-import Accordion from "../components/global/Accordion.astro";
 import Card from "../components/global/Card.astro";
 
 import LinkList from '../components/global/LinkList.astro';
@@ -107,7 +106,6 @@ icons.forEach( (stack : any) => stack.default.width = iconSize);
 						</div>
 
 						<div class="project--options flex-row">
-							{console.log(project.frontmatter.github)}
 						    { (project.frontmatter.github !== undefined && project.frontmatter.github !== null)? <a target="_blank" href={project.frontmatter.github} class="link github">See Github</a> : "" } 
 						    { (project.frontmatter.liveLink !== undefined && project.frontmatter.liveLink !== null)? <a target="_blank" href={project.url} class="link cta">View Project</a> : "" } 
 						    
