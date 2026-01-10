@@ -32,7 +32,7 @@ const {frontmatter} =  Astro.props;
 	}
 
 	.project{
-		padding: var(--spacing-3xl) 0;
+		padding: var(--spacing-3xl) var(--site-wrapper-mb-padding);
 		font-size: 1.125rem;
 	}
 
@@ -102,8 +102,6 @@ const {frontmatter} =  Astro.props;
 <Layout title={`Project: ${frontmatter.title}`}>
 	<article class="project blog--wrapper site-container">
 		<!-- Reminder to add alt tags -->
-
-		{console.log(frontmatter)}
 		<div class="project--header">
 			<div class="project--headline">
 				<h1 class="project--title">{frontmatter.title}</h1>
@@ -119,12 +117,12 @@ const {frontmatter} =  Astro.props;
 					<ul class="project-options--inner flex-row">
 						{frontmatter.github != null && frontmatter.github !== '' && (
 							<li class="option-item">
-								<a href={frontmatter.github} target="_blank" rel="noopener noreferrer" class="link--demo">See Github</a>
+								<a href={frontmatter.github} rel="noopener noreferrer" class="link--demo">See Github</a>
 							</li>
 						)}
 						{frontmatter.liveLink != null && frontmatter.liveLink !== '' && (
 							<li class="option-item">
-								<a href={frontmatter.liveLink} target="_blank" rel="noopener noreferrer" class="link--project">See Project</a>
+								<a href={frontmatter.liveLink} rel="noopener noreferrer" class="link--project">See Project</a>
 							</li>
 						)}
 					</ul>
